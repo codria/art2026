@@ -1,0 +1,647 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="jp, en">
+  <meta name="viewport" content="width=765">
+  <meta name="description" content="JapanVis2025アートコンテストの公式ページ。受賞作品や応募作品一覧を掲載。">
+  <meta name="designer" content="Satoshi MAEDA (Toyo Univ.)">
+  <title>Art Contest - JapanVis2025</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <link rel="icon" type="image/png" sizes="64x64" href="images/icon-64x64.png">
+</head>
+
+<body>
+  <!-- ヘッダー -->
+  <div class="banner"><div class="banner-inner"></div></div>
+
+  
+  <!-- コンテンツ -->
+  <div class="container">
+    <!-- 現在位置 -->
+    <div class="page_position"><a href="https://vsj.jp/japanvis2025/jp/index.html" target="_blank">2nd Japan Visualization Symposium (JapanVis 2025)</a> > Art Contest 2025</div>
+
+
+
+    <!-- 受賞作品 -->
+    <div class="section_title">
+      <div class="section_title_en">2025 AWARDS</div>
+      <div class="section_title_jp">2025年 受賞作品</div>
+    </div>
+
+    <!-- <div class="entry_award_progressing">
+      シンポジウム会場で<br>
+      大賞、金賞、銀賞の来場者投票を実施！<br>
+      皆さまの投票をお待ちしております！
+    </div> -->
+
+    <div class="flex_wrapper">
+      <a class="entry taisho" data-entry-number="01" href="#detail-01" onclick="openDetail(this)">
+        <div class="entry_title">クラゲ型ロボットによる渦構造</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a01.jpg"/></div>
+        <div class="entry_name">MANAKIJSIRISUTHI POON、美甘 見真</div>
+      </a>
+
+      <a class="entry kinsho" data-entry-number="06" href="#detail-06" onclick="openDetail(this)">
+        <div class="entry_title">どちらに旋回しているように見えますか？</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a06.jpg"/></div>
+        <div class="entry_name">澤田 祐希、新川 大治朗、白石 耕一郎</div>
+      </a>
+
+      <a class="entry ginsho" data-entry-number="05" href="#detail-05" onclick="openDetail(this)">
+        <div class="entry_title">Fallen Azaleas in the Wind</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a05.jpg"/></div>
+        <div class="entry_name">細谷 和範</div>
+      </a>
+
+      <a class="entry ginsho" data-entry-number="09" href="#detail-09" onclick="openDetail(this)">
+        <div class="entry_title">Olfaphony</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a09.jpg"/></div>
+        <div class="entry_name">今井 裕太、大畠 拓真、中村 知滉、柳瀬 龍成</div>
+      </a>
+
+      <a class="entry nyuusho" data-entry-number="02" href="#detail-02" onclick="openDetail(this)">
+        <div class="entry_title">東京メトロの路線ネットワーク図</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a02.jpg"/></div>
+        <div class="entry_name">高松 一鷹、高階 柊平</div>
+      </a>
+
+      <a class="entry nyuusho" data-entry-number="10" href="#detail-10" onclick="openDetail(this)">
+        <div class="entry_title">視線が創る世界</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a10.jpg"/></div>
+        <div class="entry_name">上村 悠人、片岡 昇吾、加藤 僚太郎、山本 英明</div>
+      </a>
+    </div>
+
+
+
+    <!-- 上位作品 -->
+    <!-- <div class="section_title">
+      <div class="section_title_en">TOP 6 ENTRIES</div>
+      <div class="section_title_jp">上位6作品（エントリー順）</div>
+    </div>
+    
+    <div class="flex_wrapper">
+      <a class="entry top6" data-entry-number="01" href="#detail-01" onclick="openDetail(this)">
+        <div class="entry_title">クラゲ型ロボットによる渦構造</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a01.jpg"/></div>
+        <div class="entry_name">MANAKIJSIRISUTHI POON、<br>美甘 見真</div>
+      </a>
+
+      <a class="entry top6" data-entry-number="02" href="#detail-02" onclick="openDetail(this)">
+        <div class="entry_title">東京メトロの路線ネットワーク図</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a02.jpg"/></div>
+        <div class="entry_name">高松 一鷹、高階 柊平</div>
+      </a>
+
+      <a class="entry top6" data-entry-number="05" href="#detail-05" onclick="openDetail(this)">
+        <div class="entry_title">Fallen Azaleas in the Wind</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a05.jpg"/></div>
+        <div class="entry_name">細谷 和範</div>
+      </a>
+
+      <a class="entry top6" data-entry-number="06" href="#detail-06" onclick="openDetail(this)">
+        <div class="entry_title">どちらに旋回しているように見えますか？</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a06.jpg"/></div>
+        <div class="entry_name">澤田 祐希、新川 大治朗、白石 耕一郎</div>
+      </a>
+
+      <a class="entry top6" data-entry-number="09" href="#detail-09" onclick="openDetail(this)">
+        <div class="entry_title">Olfaphony</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a09.jpg"/></div>
+        <div class="entry_name">今井 裕太、大畠 拓真、<br>中村 知滉、柳瀬 龍成</div>
+      </a>
+
+      <a class="entry top6" data-entry-number="10" href="#detail-10" onclick="openDetail(this)">
+        <div class="entry_title">視線が創る世界</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a10.jpg"/></div>
+        <div class="entry_name">上村 悠人、片岡 昇吾、<br>加藤 僚太郎、山本 英明</div>
+      </a>
+    </div> -->
+
+
+
+    <!-- エントリー作品 -->
+    <div id="all_entries" class="section_title">
+      <div class="section_title_en">ALL ENTRIES</div>
+      <div class="section_title_jp">全応募作品一覧</div>
+    </div>
+
+    <!-- No.1~5 -->
+    <div class="flex_wrapper">
+      <a class="entry" data-entry-number="01" href="#detail-01" onclick="openDetail(this)">
+        <div class="entry_title">クラゲ型ロボットによる渦構造</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a01.jpg"/></div>
+        <div class="entry_name">MANAKIJSIRISUTHI POON、<br>美甘 見真</div>
+      </a>
+
+      <a class="entry" data-entry-number="02" href="#detail-02" onclick="openDetail(this)">
+        <div class="entry_title">東京メトロの路線ネットワーク図</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a02.jpg"/></div>
+        <div class="entry_name">高松 一鷹、高階 柊平</div>
+      </a>
+
+      <a class="entry" data-entry-number="03" href="#detail-03" onclick="openDetail(this)">
+        <div class="entry_title">Loudscape；練習前のボク</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a03.jpg"/></div>
+        <div class="entry_name">沖田 京子、前田 聡</div>
+      </a>
+
+      <a class="entry" data-entry-number="04" href="#detail-04" onclick="openDetail(this)">
+        <div class="entry_title">モザイクアート</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a04.jpg"/></div>
+        <div class="entry_name">吉沼 智</div>
+      </a>
+
+      <a class="entry" data-entry-number="05" href="#detail-05" onclick="openDetail(this)">
+        <div class="entry_title">Fallen Azaleas in the Wind</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a05.jpg"/></div>
+        <div class="entry_name">細谷 和範</div>
+      </a>
+
+    <!-- No.6~10 -->
+      <a class="entry" data-entry-number="06" href="#detail-06" onclick="openDetail(this)">
+        <div class="entry_title">どちらに旋回しているように見えますか？</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a06.jpg"/></div>
+        <div class="entry_name">澤田 祐希、新川 大治朗、白石 耕一郎</div>
+      </a>
+
+      <a class="entry" data-entry-number="07" href="#detail-07" onclick="openDetail(this)">
+        <div class="entry_title">錯視図等を対象としたエントロピー解析</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a07.jpg"/></div>
+        <div class="entry_name">後藤 芙美子、長嶋 敏照、土田 賢省</div>
+      </a>
+
+      <a class="entry" data-entry-number="08" href="#detail-08" onclick="openDetail(this)">
+        <div class="entry_title">浮力が奏でる安定の世界</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a08.jpg"/></div>
+        <div class="entry_name">西川 泰雅、稲垣 照美</div>
+      </a>
+
+      <a class="entry" data-entry-number="09" href="#detail-09" onclick="openDetail(this)">
+        <div class="entry_title">Olfaphony</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a09.jpg"/></div>
+        <div class="entry_name">今井 裕太、大畠 拓真、<br>中村 知滉、柳瀬 龍成</div>
+      </a>
+
+      <a class="entry" data-entry-number="10" href="#detail-10" onclick="openDetail(this)">
+        <div class="entry_title">視線が創る世界</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a10.jpg"/></div>
+        <div class="entry_name">上村 悠人、片岡 昇吾、<br>加藤 僚太郎、山本 英明</div>
+      </a>
+
+    <!-- No.11~13 -->
+      <a class="entry" data-entry-number="11" href="#detail-11" onclick="openDetail(this)">
+        <div class="entry_title">Violinの３次元立体可視化</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a11.jpg"/></div>
+        <div class="entry_name">浅田 仁志</div>
+      </a>
+        
+      <a class="entry" data-entry-number="12" href="#detail-12" onclick="openDetail(this)">
+        <div class="entry_title">表面張力が奏でる奇跡の芸術</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a12.jpg"/></div>
+        <div class="entry_name">齋藤 謙太、坂本 翔、稲垣 照美</div>
+      </a>
+
+      <a class="entry" data-entry-number="13" href="#detail-13" onclick="openDetail(this)">
+        <div class="entry_title">Stillness in Motion: A Meditative Journey</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a13.jpg"/></div>
+        <div class="entry_name">村上 里子、切島 忠昭</div>
+      </a>
+    </div>
+
+
+
+    <!-- オーガナイザー -->
+    <div class="section_title">
+      <div class="section_title_en">ORGANIZERS</div>
+      <div class="section_title_jp">主催者一覧 (五十音順)</div>
+    </div>
+    <div class="flex_wrapper">
+      <div class="organizer-card">
+        <div class="name">沖田 京子</div>
+        <div class="affiliation">東洋大学総合情報学研究科</div>
+      </div>
+      <div class="organizer-card">
+        <div class="name">加藤 千恵子</div>
+        <div class="affiliation">東洋大学総合情報学部</div>
+      </div>
+      <div class="organizer-card">
+        <div class="name">菊地 謙次</div>
+        <div class="affiliation">東北大学工学研究科</div>
+      </div>
+      <div class="organizer-card">
+        <div class="name">切島 忠昭</div>
+        <div class="affiliation">東洋大学総合情報学部</div>
+      </div>
+      <div class="organizer-card">
+        <div class="name">菅原 徹</div>
+        <div class="affiliation">早稲田大学人間総合研究センター</div>
+      </div>
+      <div class="organizer-card">
+        <div class="name">田中 覚</div>
+        <div class="affiliation">立命館大学情報理工学部</div>
+      </div>
+      <div class="organizer-card">
+        <div class="name">前田 聡</div>
+        <div class="affiliation">東洋大学理工学部</div>
+      </div>
+      <div class="organizer-card">
+        <div class="name">宮地 英生</div>
+        <div class="affiliation">東京都市大学メディア情報学部</div>
+      </div>
+      <div class="organizer-card">
+        <div class="name">村上 里子</div>
+        <div class="affiliation">東洋大学総合情報学研究科</div>
+      </div>
+      <div class="organizer-card">
+        <div class="name">元祐 昌廣</div>
+        <div class="affiliation">東京理科大学工学部</div>
+      </div>
+      <div class="organizer-card">
+        <div class="name">山辺 真幸</div>
+        <div class="affiliation">一橋大学ソーシャル・データサイエンス研究科</div>
+      </div>
+    </div>
+
+    <!-- スペシャルサンクス -->
+    <div class="section_title">
+      <div class="section_title_en">SPECIAL THANKS</div>
+      <div class="section_title_jp">ご協力いただいた皆様（順不同）</div>
+    </div>
+    
+    <div class="flex_wrapper">
+      <div class="organizer-card">
+        <div class="name">長谷川 恭子様</div>
+        <div class="affiliation"><a href="https://vsj.jp/japanvis2025/jp/index.html#organizer" target="_blank">JapanVis2025 実行委員長</a></div>
+      </div>
+      <div class="organizer-card">
+        <div class="name">伊藤 貴之様</div>
+        <div class="affiliation"><a href="https://vsj.jp/japanvis2025/jp/index.html#organizer" target="_blank">JapanVis2025 プログラム委員長</a></div>
+      </div>
+      <div class="organizer-card">
+        <div class="name">ご投票くださった皆様</div>
+        <div class="affiliation"><a href="https://vsj.jp/japanvis2025/jp/index.html#program" target="_blank">JapanVis2025 参加者</a></div>
+      </div>
+      <div class="organizer-card applicants">
+        <div class="name">ご応募くださった皆様</div>
+        <div class="affiliation">
+          <a href="#all_entries">ArtContest2025 参加者</a>
+          <p>今年も素晴らしい作品の数々をご応募いただき、誠にありがとうございました！</p>
+          <p>今後とも本コンテストへのご参加をお待ちしております！</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- 拡大表示枠（コントロールはJavaScript） -->
+    <div id="overlay" class="hidden" onclick="overlayClick(event)">
+      <div id="overlay-content"></div>
+      <button id="prev-btn" onclick="prevDetail(event)">＜</button>
+      <button id="next-btn" onclick="nextDetail(event)">＞</button>
+      <button id="close-btn" onclick="closeDetail()">閉じる</button>
+    </div>
+
+    <!-- 作品詳細 -->
+    <!-- hiddenクラスをJavaScriptで差し込むことで、JavaScriptオフで拡大表示できない場合に通常表示で閲覧する -->
+    <div class="detail" id="detail-01">
+      <!-- <div class="sticker top6">TOP6</div> 上位作品用ステッカー -->
+      <div class="sticker taisho">大賞</div>
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 01</div>
+        <div class="section_title_jp">応募作品 01</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a01.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>クラゲ型ロボットによる渦構造</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>MANAKIJSIRISUTHI POON、美甘 見真</td></tr>
+            <tr><th>所属</th><td>津山工業高等専門学校</td></tr>
+            <tr><th>公開URL</th><td><a href="https://kosenjp-my.sharepoint.com/:v:/g/personal/i-0217_tsuyama_kosen-ac_jp/EXgjmZxgRl1AmTOc_LPdCogBYCp0DAPJFYBVVpQRoTtK5Q" target="_blank">https://kosenjp-my.sharepoint.com/:v:/g/personal/i-0217_tsuyama_kosen-ac_jp/EXgjmZxgRl1AmTOc_LPdCogBYCp0DAPJFYBVVpQRoTtK5Q</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　蛍光染料によるクラゲ型ロボットがつくり出す流れ場の可視化です。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-02">
+      <!-- <div class="sticker top6">TOP6</div> 上位作品用ステッカー -->
+      <div class="sticker nyuusho">入賞</div>
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 02</div>
+        <div class="section_title_jp">応募作品 02</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a02.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>東京メトロの路線ネットワーク図</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>高松 一鷹、高階 柊平</td></tr>
+            <tr><th>所属</th><td>筑波大学</td></tr>
+            <tr><th>公開URL</th><td><a href="https://drive.google.com/file/d/1CR_VSGyp_RNev-3J7zM9nzuuoaDpMe3i" target="_blank">https://drive.google.com/file/d/1CR_VSGyp_RNev-3J7zM9nzuuoaDpMe3i</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　本作品は、東京メトロ全路線をノード（駅）とエッジ（路線）によるネットワーク図として再構成し、都市を走る地下鉄のリズムを一望できる情報可視化作品です。各駅は電車の停車頻度や接続性をノードサイズや色彩で視覚的に表現します。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-03">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 03</div>
+        <div class="section_title_jp">応募作品 03</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a03.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>Loudscape；練習前のボク</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>沖田 京子、前田 聡</td></tr>
+            <tr><th>所属</th><td>東洋大学</td></tr>
+            <tr><th>公開URL</th><td><a href="https://www.youtube.com/watch?v=5xORdAt5WQQ" target="_blank">https://www.youtube.com/watch?v=5xORdAt5WQQ</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　本作品は、感情のこもった人の声を周波数解析し、そのエネルギー分布を地形として可視化するメディアアートである。<br>　音声にフーリエ変換（FFT）を施し、各時点における周波数成分の振幅（エネルギー）を取得。それを極座標上に展開し、時間を角度（0〜360度）、周波数を半径、振幅を標高としてマッピングすることで、音のスペクトルを“風景”のように描き出している。<br>　本作では、楽しい気分の声と面倒な気分の声の両方を用いて比較を行い、声の種類による地形の違いを表現した。明るい声に特有の高周波成分は外縁部に山として現れ、内側にはなだらかな起伏が生まれる。一方、暗い声は明るい声と比べて中低周波が主成分となるため、より内側に山が集中した地形となる。<br>　また、時間軸を円環状に変換することで生じる断絶を避けるため、音声の始点と終点を滑らかに補間し、連続性のある風景表現を実現している。<br>　科学的手法と視覚芸術の融合により、非言語的な感情表現を、風景のかたちで描き出す試みである。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-04">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 04</div>
+        <div class="section_title_jp">応募作品 04</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a04.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>モザイクアート</td></tr>
+            <tr><th>作品形態</th><td>画像</td></tr>
+            <tr><th>製作者</th><td>吉沼 智</td></tr>
+            <tr><th>公開URL</th><td><a href="works/a04.jpg" target="_blank">本サーバー</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　この作品は、たくさんの千羽鶴の画像を使って作るモザイクアートです。一羽一羽の鶴には「平和を願う気持ち」が込められており、それらを組み合わせることで大きな一つの絵を表現します。完成したモザイクには、平和を象徴するハトや地球、子どもたちが手を取り合う様子など、世界が平和であることを願うメッセージが込められています。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-05">
+      <!-- <div class="sticker top6">TOP6</div> 上位作品用ステッカー -->
+      <div class="sticker ginsho">銀賞</div>
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 05</div>
+        <div class="section_title_jp">応募作品 05</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a05.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>Fallen Azaleas in the Wind</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>細谷 和範</td></tr>
+            <tr><th>所属</th><td>津山工業高等専門学校</td></tr>
+            <tr><th>公開URL</th><td><a href="https://www.youtube.com/watch?v=BBW4-G94WJI" target="_blank">https://www.youtube.com/watch?v=BBW4-G94WJI</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　咲いている花ではなく，落花した花が風の流れの中で魅せるユニークな振る舞いを動画にしました．<br>　街中や公園でよく見かけるツツジやサツキは，多くが合弁花冠の形状を維持したまま落花します．落花した花は横を向いたり，伏せた姿勢になったりとさまざまですが，初夏に吹く風や道路を通行する自動車が作り出す風によって飛ばされると，多くの花が伏せた状態になってその場に留まります．このユニークな現象を流れの可視化実験や水理実験により評価したところ，重心の位置だけでなく，花の姿勢によって大きく異なる揚力係数や抗力係数が大きく影響していることがわかりました．<br>　落下後の花が魅せる振る舞いをぜひお楽しみください．
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-06">
+      <!-- <div class="sticker top6">TOP6</div> 上位作品用ステッカー -->
+      <div class="sticker kinsho">金賞</div>
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 06</div>
+        <div class="section_title_jp">応募作品 06</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a06.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>どちらに旋回しているように見えますか？</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>澤田 祐希、新川 大治朗、白石 耕一郎</td></tr>
+            <tr><th>所属</th><td>国立研究開発法人海上・港湾・港空技術研究所　海上技術安全研究所</td></tr>
+            <tr><th>公開URL</th><td><a href="works/a06.mp4" target="_blank">本サーバー</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　本動画は、海上技術安全研究所の大型キャビテーション水槽にて、透明な模型翼型を用いてシャドウグラフィを実施した際に、高速度カメラで撮影された映像の一部です。<br>　模型翼型の翼端からチップボルテックスキャビテーション（以下、TVC）が発達していく様子を捉えています。翼端渦の周囲に小さな気泡のキャビテーションが発生し、それらが連なることでTVCが成長していく様子が確認できます。<br>　また、TVCは渦として旋回しながら発生しますが、本動画はシャドウグラフィによる影絵であるため、右回転・左回転の判別が視覚的には困難で、どちらの方向にも見える場合があります。実際には、撮影側が翼の負圧面に位置しており、翼端渦は上流側から見て時計回り（右回転）に旋回しており、キャビテーションも同様に右回転で発生しています。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-07">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 07</div>
+        <div class="section_title_jp">応募作品 07</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a07.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>錯視図等を対象としたエントロピー解析</td></tr>
+            <tr><th>作品形態</th><td>パワーポイント</td></tr>
+            <tr><th>製作者</th><td>後藤 芙美子、長嶋 敏照、土田 賢省</td></tr>
+            <tr><th>所属</th><td>東洋大学</td></tr>
+            <tr><th>公開URL</th><td><a href="works/a07.pdf" target="_blank">本サーバー</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　本作品は、視覚錯視図、曼荼羅、ゴッホ《アイリス》など多様な視覚的イメージを対象に、エントロピー解析を用いてその構造的特性を可視化したものである。画像の水平方向・垂直方向・対角方向の差分情報に加え、局所エントロピーを算出し、情報量の分布や秩序・無秩序の度合いをヒートマップとして表現した。これにより、単なる視覚的美しさを超えて、作品に内在する情報的・構造的複雑性を直感的に提示することを目指した。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-08">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 08</div>
+        <div class="section_title_jp">応募作品 08</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a08.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>浮力が奏でる安定の世界</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>西川 泰雅、稲垣 照美</td></tr>
+            <tr><th>所属</th><td>茨城大学</td></tr>
+            <tr><th>公開URL</th><td><a href="https://www.mech.ibaraki.ac.jp/~hotaru/Benard_Cells/" target="_blank">https://www.mech.ibaraki.ac.jp/~hotaru/Benard_Cells/</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　本作品は，流体粒子が紡ぐベナールセルの安定な世界観を表現しています．その正六角形には自然の調和と安定が表現され，自然エネルギーの生命力と不思議が投射されています．そして，生物（社会性昆虫の蜂）が構築する世界との力学的な整合性もあります．それらに秘められた自然のダイナミズムは，自然の摂理に対する深い洞察力を我々に与えます．
+          <table class="abstract_table">
+            <tr><th>作動流体</th><td>信越化学工業株式会社</td><td>シリコーンオイルKF-96-300cS</td></tr>
+            <tr><th>作動粒子</th><td>戸谷染料商店</td><td>銀粉</td></tr>
+            <tr><th>撮影機材(カメラ)</th><td>Teledyne Technologies </td><td>FL3-U3-32S2C-CS</td></tr>
+            <tr><th>撮影機材(レンズ)</th><td>株式会社ニコン</td><td>Micro-Nikkor 105mm f/2.8</td></tr>
+            <tr><th>加熱面温度</th><td>68.2 ℃</td></tr>
+            <tr><th>冷却面温度(推定)</th><td>58 ℃</td></tr>
+            <tr><th>レイリー数(推定)</th><td>2.27×10^3 [-]</td></tr>
+            <tr><th>プラントル数(推定)</th><td>2.41×10^3 [-]</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-09">
+      <!-- <div class="sticker top6">TOP6</div> 上位作品用ステッカー -->
+      <div class="sticker ginsho">銀賞</div>
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 09</div>
+        <div class="section_title_jp">応募作品 09</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a09.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>Olfaphony</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>今井 裕太、大畠 拓真、中村 知滉、柳瀬 龍成</td></tr>
+            <tr><th>所属</th><td>東京理科大学</td></tr>
+            <tr><th>公開URL</th><td><a href="https://www.youtube.com/watch?v=W1iMiDbyRl8" target="_blank">https://www.youtube.com/watch?v=W1iMiDbyRl8</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　'Olfactory’それは嗅覚。’Symphony’それは調和。<br>　嗅覚から得られる匂いを視覚で捉えられる色に対応させ、可視化する。身の回りの独立した匂いを調和させ、1つのアートとして昇華させる。<br>　これが私たちの’Olfaphony’。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-10">
+      <!-- <div class="sticker top6">TOP6</div> 上位作品用ステッカー -->
+      <div class="sticker nyuusho">入賞</div>
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 10</div>
+        <div class="section_title_jp">応募作品 10</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a10.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>視線が創る世界</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>上村 悠人、片岡 昇吾、加藤 僚太郎、山本 英明</td></tr>
+            <tr><th>所属</th><td>東京理科大学</td></tr>
+            <tr><th>公開URL</th><td><a href="https://www.youtube.com/watch?v=thvSFSCc2qk" target="_blank">https://www.youtube.com/watch?v=thvSFSCc2qk</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　本作品では、視線の集まりをヒートマップとして可視化することで、「関心」や「注目」といったかたちのない曖昧な思考の輪郭を浮かび上がらせています。無意識に行われている、見ること/見ないことの選択を知ることで、ものの見方を問い直し、世界との新たな向かい方を考えるきっかけを提供します。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-11">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 11</div>
+        <div class="section_title_jp">応募作品 11</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a11.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>Violinの３次元立体可視化</td></tr>
+            <tr><th>作品形態</th><td>ポスター</td></tr>
+            <tr><th>製作者</th><td>浅田 仁志</td></tr>
+            <tr><th>所属</th><td>情報科学芸術大学院大学</td></tr>
+            <tr><th>公開URL</th><td><a href="works/a11.pdf" target="_blank">本サーバー</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　本作品はviolinにおいて構造解析から音響解析に至るまで楽器に生じている一連の現象を可視化したものである。<br>　従来研究においてはviolinの本体構造に弦圧を付加した状態での実測から数値解析に至る連続的な手法を用いた可視化解析は困難であった。しかしviolinの弦の生み出す圧力は構造デザインや音響性能に大きく影響している可能性があり極めて重要な現象作用であると考えられる。この様な課題に対処するため、本作品ではviolin本体構造において実測から数値解析に至る弦圧影響の新たな可視化解析手法を提案している。<br>　左上図はCTによる３次元計測手法を用いた実測データ解析による変形影響の可視化データが示されており、左下図ではその本体構造中心付近の断面が示されている。中央上図はCT実測データに基づき有限要素法モデルが構築されて数値解析による弦圧影響の応力分布可視化が示されており、中央下図ではその本体構造中心付近の断面が示されている。右上図は弦圧が付加された状態のviolinの数値解析による音響解析の固有値モード形状の数値解析結果における可視化データが示されており、右下図ではその本体構造中心付近の断面が示されている。この様に本作品はviolinの弦圧影響を反映した状態において実測から数値解析に至る連続的なプロセスの分析手法を駆使して可視化されているものである。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-12">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 12</div>
+        <div class="section_title_jp">応募作品 12</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a12.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>表面張力が奏でる奇跡の芸術</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td> 齋藤 謙太、坂本 翔、稲垣 照美</td></tr>
+            <tr><th>所属</th><td>茨城大学</td></tr>
+            <tr><th>公開URL</th><td><a href="https://www.mech.ibaraki.ac.jp/~hotaru/Marangoni_Gear/" target="_blank">https://www.mech.ibaraki.ac.jp/~hotaru/Marangoni_Gear/</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract"> 
+          <h5>作品概要</h5>
+          　一般的に表面張力は低温ほど大きくなる．高温壁面と低温壁面間の温度差が生じている空間に液膜厚さ（試験流体の量）が1～2 mmの際，表面張力の作用によって，鋸の刃のような波が静かに回転する．この対流は液膜厚さが3 mm以上になると生じなくなる摩訶不思議な対流である．応募作品の動画の実験条件を以下に示す．
+          <table class="abstract_table">
+            <tr><th>試験流体</th><td>KF-96L-1cs</td><th><span class="italic">Ma</span>（マランゴニ数）</td><td>3.54×10^4</td></tr>
+            <tr><th>加熱壁面と冷却壁面の温度差</th><td>25℃</td><th><span class="italic">Pr</span>（プラントル数）</td><td>16.13</td></tr>
+            <tr><th>液膜厚さ</th><td>1.0 mm</td><th><span class="italic">Ra</span>（レイリー数）</td><td>3.87×10^3</td></tr>
+            <tr><th>試験流体粘度</th><td>1.0 cSt</td><th><span class="italic">Bo</span>（ボンド数）</td><td>0.11</td></tr>
+            <tr><th>対流撮影機器</th><td>NEC/Avio R300 Pro</td><th><span class="italic">A</span>（アスペクト比）</td><td>10.00</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-13">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 13</div>
+        <div class="section_title_jp">応募作品 13</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a13.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>Stillness in Motion: A Meditative Journey</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>村上 里子、切島 忠昭</td></tr>
+            <tr><th>所属</th><td>東洋大学</td></tr>
+            <tr><th>公開URL</th><td><a href="works/a13.mp4" target="_blank">本サーバー</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　聖なる流れのそばで、静かに行われるヨーガの修行。身体の動きと呼吸が調和し、内なる静けさが広がっていきます。本作品は、精神性と自然との共鳴を表現した映像作品です。
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- フッター -->
+  <div class="footer">
+    <div class="footer-inner">　2013年度の可視化情報シンポジウムで，芸術的に優れた可視化作品に対して「アート賞」を選出するアートセッションが始まりました．本学会名の一部でもある“可視化”を共通のキーワードとして芸術，科学，工学，エンターテイメントなど様々な分野で可視化された作品を一堂に会し，可視化作品として展示します．応募作品は，可視化作品であれば，ジャンルを問わず，CG，映像，インスタレーションなどのデジタルから，絵画，版画，彫刻，オブジェなどのアナログまで，表現形態も自由となっています．多くの皆さんに可視化の新たな一面を鑑賞して頂ければと思っています．また，様々な分野で可視化に携わる人たちの交流の場となり，新たな可視化の創出のきっかけとなればと期待しています。</div>
+    <div class="copyright">Copyright &copy; <a href="https://www.vsj.jp/" target="_blank">The Visualization Society of Japan</a>. All rights reserved.</div>
+    <!-- 2025年度ページ改修、サムネイル作成、応募データ入力諸々担当：前田聡(maeda518@toyo.jp) -->
+  </div>
+  
+  <!-- JavaScript：ページ要素を一通り読み込んでから実行するために、この位置に記載 -->
+  <script src="js/script.js"></script>
+</body>
+</html>
