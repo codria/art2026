@@ -90,7 +90,7 @@ body {
 	position: relative;
 	width: 270px;
 	height: auto;
-	background: #cec29c;
+	background: #e6dec7;
 	/* background: linear-gradient(to right bottom, #fff 0%, #bbb 100%); */
 	box-sizing: border-box;
 	overflow: hidden;
@@ -101,7 +101,7 @@ body {
 }
 .entry:hover {
 	transform: scale(1.03); /* ズレを戻しつつ少し大きく */
-	filter: brightness(1.1);
+	filter: brightness(1.05);
 	cursor: pointer;
 }
 .entry::before {
