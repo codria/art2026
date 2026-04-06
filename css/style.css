@@ -88,16 +88,18 @@ body {
 	text-decoration: none;
 	color: #000;
 	position: relative;
-	width: 270px; /* 230 + 15 + 230 + 15 + 230 = 720, container 765, margin 45/2 */
+	width: 270px;
 	height: auto;
 	background: linear-gradient(to right bottom, #fff 0%, #bbb 100%);
 	box-sizing: border-box;
 	overflow: hidden;
-	border: 1px solid #bbbbbb; /* Actually width: 228 + 1*2 = 230px */
+	border: 1px solid #bbbbbb;
 	border-radius: 3px;
+	transition: transform 0.3s, filter 0.3s ease;
 }
 .entry:hover {
-	filter: brightness(1.1);
+	transform: scale(1.03); /* ズレを戻しつつ少し大きく */
+	filter: brightness(0.9);
 	cursor: pointer;
 }
 .entry::before {
@@ -314,17 +316,21 @@ body {
 	text-decoration: none;
 	font-weight: bold;
 	text-align: center;
-  	transition: background-color 0.2s, color 0.2s;
+	transition: filter 0.3s ease;
 }
 
 .link-box span.arrow {
+	display: inline-block;
 	margin-left: 8px;
-	font-weight: normal;
+	transition: transform 0.3s ease; /* 矢印の動きを滑らかに */
+}
+
+.link-box:hover .arrow {
+  transform: translateX(3px); /* ホバー時に矢印だけ5px右にずれる */
 }
 
 .link-box:hover {
-	background: linear-gradient(to right bottom, #909090 0%, #3e3e3e 100%);
-	color: white;
+	filter: brightness(0.85);
 }
 
 
@@ -466,10 +472,10 @@ body {
 
 
 
-/* 応募要項 */
+/* 募集要項 */
 .guideline_detail table {
 	max-width: 1160px;
-	margin: 0 auto;
+	margin: 0 auto 40px;
 	border-collapse: separate;
 	border-spacing: 0 0px;
 	border: none;
@@ -491,6 +497,42 @@ body {
 	background-color: #fff;
 }
 
+/* 募集要項フローチャート */
+.flow-chart {
+  display: flex;
+  justify-content: center;
+  padding: 40px 10px;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+  overflow-x: auto; /* スマホでは横スクロール可能に */
+}
+
+.step {
+  position: relative;
+  min-width: 160px;
+  padding: 20px 10px;
+  border-radius: 15px; /* 角丸 */
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  margin-right: -10px; /* マイナスマージンで重ねる */
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+/* 各ステップの背景色（添付画像のグラデーション再現） */
+.step-u { background-color: #1b2229; transform: translateY(-10px); } /* 上 */
+.step-d { background-color: #48525c; transform: translateY(10px); }  /* 下 */
+.step:hover {
+  transform: translateY(0) scale(1.1); /* ズレを戻しつつ少し大きく */
+  z-index: 10; /* ホバー中だけ一番手前に */
+}
+.step span {
+  font-size: 0.8em;
+  display: block;
+  margin-top: 5px;
+  font-weight: normal;
+}
 
 
 /* オーバーレイ */
