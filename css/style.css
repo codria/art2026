@@ -90,16 +90,18 @@ body {
 	position: relative;
 	width: 270px;
 	height: auto;
-	background: linear-gradient(to right bottom, #fff 0%, #bbb 100%);
+	background: #cec29c;
+	/* background: linear-gradient(to right bottom, #fff 0%, #bbb 100%); */
 	box-sizing: border-box;
 	overflow: hidden;
 	border: 1px solid #bbbbbb;
 	border-radius: 3px;
+	box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
 	transition: transform 0.3s, filter 0.3s ease;
 }
 .entry:hover {
 	transform: scale(1.03); /* ズレを戻しつつ少し大きく */
-	filter: brightness(0.9);
+	filter: brightness(1.1);
 	cursor: pointer;
 }
 .entry::before {
@@ -311,12 +313,14 @@ body {
 	padding: 10px 16px;
 	border: 1px solid #bbbbbb;
 	border-radius: 6px;
-	color: black;
-	background: linear-gradient(to right bottom, #fff 0%, #bbb 100%);
+	color: white;
+	background: #1b2229;
+	/* background: linear-gradient(to right bottom, #fff 0%, #bbb 100%); */
 	text-decoration: none;
 	font-weight: bold;
 	text-align: center;
 	transition: filter 0.3s ease;
+	box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
 }
 
 .link-box span.arrow {
@@ -330,7 +334,7 @@ body {
 }
 
 .link-box:hover {
-	filter: brightness(0.85);
+	filter: brightness(1.2);
 }
 
 
