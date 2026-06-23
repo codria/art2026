@@ -1,35 +1,41 @@
-let currentGroup = null;  // 'top6', 'all', 'award'
+let currentGroup = null;  // 'top6', 'all_2026', 'all_2025', 'award'
 let currentEntryIndex = null;
 let entryOrders = {
   top6: [],
-  all: [],
+  all_2026: [],
+  all_2025: [],
   award: []
 };
+let entryOrdersInitialized = false;
 
 function initEntryOrders() {
-  if (entryOrders.top6.length > 0 && entryOrders.all.length > 0 && entryOrders.award.length > 0) return;
+  if (entryOrdersInitialized) return;
+  entryOrdersInitialized = true;
 
-  entryOrders.top6 = Array.from(document.querySelectorAll('.entry.top6')).map(el => el.getAttribute('data-entry-number'));
-  entryOrders.all = Array.from(document.querySelectorAll('.entry:not(.top6):not(.taisho):not(.kinsho):not(.ginsho):not(.nyuusho)')).map(el => el.getAttribute('data-entry-number'));
+  const idsFromEls = els => Array.from(els).map(el => el.getAttribute('href').substring(1));
 
-  // award は taisho, kinsho, ginsho のエントリーをまとめて
-  entryOrders.award = Array.from(document.querySelectorAll('.entry.taisho, .entry.kinsho, .entry.ginsho, .entry.nyuusho')).map(el => el.getAttribute('data-entry-number'));
+  entryOrders.top6 = idsFromEls(document.querySelectorAll('.entry.top6'));
+  entryOrders.award = idsFromEls(document.querySelectorAll('.entry.taisho, .entry.kinsho, .entry.ginsho, .entry.nyuusho'));
+  entryOrders.all_2026 = idsFromEls(document.querySelectorAll('.entry[data-year="2026"]:not(.top6):not(.taisho):not(.kinsho):not(.ginsho):not(.nyuusho)'));
+  entryOrders.all_2025 = idsFromEls(document.querySelectorAll('.entry[data-year="2025"]:not(.top6):not(.taisho):not(.kinsho):not(.ginsho):not(.nyuusho)'));
 }
 
 function openDetail(el) {
   initEntryOrders();
 
-  const entryId = el.getAttribute('data-entry-number');
+  const detailId = el.getAttribute('href').substring(1);  // "detail-2026-01" 等
   if (el.classList.contains('top6')) {
     currentGroup = 'top6';
   } else if (el.classList.contains('taisho') || el.classList.contains('kinsho') || el.classList.contains('ginsho') || el.classList.contains('nyuusho')) {
     currentGroup = 'award';
+  } else if (el.getAttribute('data-year') === '2025') {
+    currentGroup = 'all_2025';
   } else {
-    currentGroup = 'all';
+    currentGroup = 'all_2026';
   }
-  currentEntryIndex = entryOrders[currentGroup].indexOf(entryId);
+  currentEntryIndex = entryOrders[currentGroup].indexOf(detailId);
 
-  showDetailById(entryId);
+  showDetailById(detailId);
   document.getElementById('overlay').classList.remove('hidden');
   return false;
 }
@@ -41,8 +47,8 @@ function closeDetail() {
   currentEntryIndex = null;
 }
 
-function showDetailById(entryId) {
-  const detailHtml = document.getElementById('detail-' + entryId).innerHTML;
+function showDetailById(detailId) {
+  const detailHtml = document.getElementById(detailId).innerHTML;
   document.getElementById('overlay-content').innerHTML = detailHtml;
 }
 
@@ -52,8 +58,7 @@ function prevDetail(event) {
   if (currentGroup === null || currentEntryIndex === null) return;
   if (currentEntryIndex > 0) {
     currentEntryIndex--;
-    const prevId = entryOrders[currentGroup][currentEntryIndex];
-    showDetailById(prevId);
+    showDetailById(entryOrders[currentGroup][currentEntryIndex]);
   }
 }
 
@@ -63,8 +68,7 @@ function nextDetail(event) {
   if (currentGroup === null || currentEntryIndex === null) return;
   if (currentEntryIndex < entryOrders[currentGroup].length - 1) {
     currentEntryIndex++;
-    const nextId = entryOrders[currentGroup][currentEntryIndex];
-    showDetailById(nextId);
+    showDetailById(entryOrders[currentGroup][currentEntryIndex]);
   }
 }
 

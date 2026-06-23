@@ -15,7 +15,7 @@
   <!-- ヘッダー -->
   <div class="banner"><div class="banner-inner"></div></div>
 
-  
+
   <!-- コンテンツ -->
   <div class="container">
     <!-- 現在位置 -->
@@ -74,7 +74,7 @@
       <div class="section_title_en">TOP 6 ENTRIES</div>
       <div class="section_title_jp">上位6作品（エントリー順）</div>
     </div>
-    
+
     <div class="flex_wrapper">
       <a class="entry top6" data-entry-number="" href="#detail-" onclick="openDetail(this)">
         <div class="entry_title"></div>
@@ -121,8 +121,8 @@
       <div class="section_title_jp">2026年度 募集要項</div>
     </div>
     <div class="flow-chart">
-      <div class="step step-u">STEP 01<br>応募<span>応募用紙に必要事項を<br>記入してメール提出</span></div>
-      <div class="step step-d">STEP 02<br>作品提出<span>製作した作品を<br>メール提出</span></div>
+      <div class="step step-u completed">STEP 01<br>応募<span>応募用紙に必要事項を<br>記入してメール提出</span></div>
+      <div class="step step-d completed">STEP 02<br>作品提出<span>製作した作品を<br>メール提出</span></div>
       <div class="step step-u">STEP 03<br>一次審査と結果通知<span>一次審査を通過した<br>上位6作品の発表</span></div>
       <div class="step step-d">STEP 04<br>シンポジウム参加登録<span>一次審査通過者は<br>シンポジウムに参加登録</span></div>
       <div class="step step-u">STEP 05<br>アートコンテスト当日<span>シンポジウム会場で展示・解説<br>一般投票と最終審査を実施</span></div>
@@ -133,11 +133,11 @@
         <tbody>
           <tr>
             <th>応募期間</th>
-            <td>2026年5月6日(水) ～ 6月5日(金) 23:59</td>
+            <td>2026年5月6日(水) ～ 6月5日(金) 23:59 <span class="closed">(受付終了)</span></td>
           </tr>
           <tr>
             <th>作品提出締切</th>
-            <td>2026年6月23日(火) 23:59</td>
+            <td>2026年6月23日(火) 23:59 <span class="closed">(受付終了)</span></td>
           </tr>
           <tr>
             <th>一次審査結果通知</th>
@@ -182,104 +182,229 @@
       </table>
     </div>
 
-    <!-- エントリー作品 -->
-    <!-- <div id="all_entries" class="section_title">
+    <!-- 2026年度応募作品 -->
+    <div id="all_entries" class="section_title">
       <div class="section_title_en">ALL ENTRIES</div>
       <div class="section_title_jp">全応募作品一覧</div>
-    </div> -->
-    <div id="all_entries" class="section_title">
-      <div class="section_title_en">LAST YEAR’S ENTRIES</div>
-      <div class="section_title_jp">昨年度応募作品</div>
     </div>
 
-    <!-- No.1~5 -->
     <div class="flex_wrapper">
-      <a class="entry" data-entry-number="01" href="#detail-01" onclick="openDetail(this)">
-        <div class="entry_title">クラゲ型ロボットによる渦構造</div>
-        <div class="entry_thumbnail"><img src="old_works/thumbnails/a01.jpg"/></div>
-        <div class="entry_name">MANAKIJSIRISUTHI POON、<br>美甘 見真</div>
+    <!-- No.1~5 -->
+      <a class="entry" data-entry-number="01" data-year="2026" href="#detail-2026-01" onclick="openDetail(this)">
+        <div class="entry_title">Violinの３次元音響放射立体可視化</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a01.jpeg"/></div>
+        <div class="entry_name">浅田 仁志</div>
       </a>
 
-      <a class="entry" data-entry-number="02" href="#detail-02" onclick="openDetail(this)">
-        <div class="entry_title">東京メトロの路線ネットワーク図</div>
-        <div class="entry_thumbnail"><img src="old_works/thumbnails/a02.jpg"/></div>
-        <div class="entry_name">高松 一鷹、高階 柊平</div>
-      </a>
-
-      <a class="entry" data-entry-number="03" href="#detail-03" onclick="openDetail(this)">
-        <div class="entry_title">Loudscape；練習前のボク</div>
-        <div class="entry_thumbnail"><img src="old_works/thumbnails/a03.jpg"/></div>
-        <div class="entry_name">沖田 京子、前田 聡</div>
-      </a>
-
-      <a class="entry" data-entry-number="04" href="#detail-04" onclick="openDetail(this)">
-        <div class="entry_title">モザイクアート</div>
-        <div class="entry_thumbnail"><img src="old_works/thumbnails/a04.jpg"/></div>
-        <div class="entry_name">吉沼 智</div>
-      </a>
-
-      <a class="entry" data-entry-number="05" href="#detail-05" onclick="openDetail(this)">
-        <div class="entry_title">Fallen Azaleas in the Wind</div>
-        <div class="entry_thumbnail"><img src="old_works/thumbnails/a05.jpg"/></div>
+      <a class="entry" data-entry-number="02" data-year="2026" href="#detail-2026-02" onclick="openDetail(this)">
+        <div class="entry_title">The Silent Landing of a Camellia</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a02.jpg"/></div>
         <div class="entry_name">細谷 和範</div>
       </a>
 
+      <a class="entry" data-entry-number="03" data-year="2026" href="#detail-2026-03" onclick="openDetail(this)">
+        <div class="entry_title">海底火山噴火の軽石漂流シミュレーション</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a03.jpg"/></div>
+        <div class="entry_name">山辺 真幸、西川 悠、<br>桑谷 立、黒木 聖夫</div>
+      </a>
+
+      <a class="entry" data-entry-number="04" data-year="2026" href="#detail-2026-04" onclick="openDetail(this)">
+        <div class="entry_title">Frozen Karman vortex</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a04.jpg"/></div>
+        <div class="entry_name">岩野 耕治</div>
+      </a>
+
+      <a class="entry" data-entry-number="05" data-year="2026" href="#detail-2026-05" onclick="openDetail(this)">
+        <div class="entry_title">AIを用いた手影絵のインタラクティブアート</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a05.png"/></div>
+        <div class="entry_name">深石 愛梨、宮地 英生、飯田 周一</div>
+      </a>
+
     <!-- No.6~10 -->
-      <a class="entry" data-entry-number="06" href="#detail-06" onclick="openDetail(this)">
-        <div class="entry_title">どちらに旋回しているように見えますか？</div>
-        <div class="entry_thumbnail"><img src="old_works/thumbnails/a06.jpg"/></div>
-        <div class="entry_name">澤田 祐希、新川 大治朗、白石 耕一郎</div>
+      <a class="entry" data-entry-number="06" data-year="2026" href="#detail-2026-06" onclick="openDetail(this)">
+        <div class="entry_title">Still Symmetry</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a06.jpg"/></div>
+        <div class="entry_name">Yuta SHIGA</div>
       </a>
 
-      <a class="entry" data-entry-number="07" href="#detail-07" onclick="openDetail(this)">
-        <div class="entry_title">錯視図等を対象としたエントロピー解析</div>
-        <div class="entry_thumbnail"><img src="old_works/thumbnails/a07.jpg"/></div>
-        <div class="entry_name">後藤 芙美子、長嶋 敏照、土田 賢省</div>
+      <a class="entry" data-entry-number="07" data-year="2026" href="#detail-2026-07" onclick="openDetail(this)">
+        <div class="entry_title">鼓動を見る -Visualization of heartbeat-</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a07.jpg"/></div>
+        <div class="entry_name">藤田 拓希、佐山 開都、内田 太士、<br>堀井 ももこ、チェ ミョンホン</div>
       </a>
 
-      <a class="entry" data-entry-number="08" href="#detail-08" onclick="openDetail(this)">
-        <div class="entry_title">浮力が奏でる安定の世界</div>
-        <div class="entry_thumbnail"><img src="old_works/thumbnails/a08.jpg"/></div>
-        <div class="entry_name">西川 泰雅、稲垣 照美</div>
+      <a class="entry" data-entry-number="08" data-year="2026" href="#detail-2026-08" onclick="openDetail(this)">
+        <div class="entry_title">Biojectory</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a08.jpg"/></div>
+        <div class="entry_name">杉山 裕也、岩山 うみ、<br>永山 遼、藤田 優翔、脇田 康暉</div>
       </a>
 
-      <a class="entry" data-entry-number="09" href="#detail-09" onclick="openDetail(this)">
-        <div class="entry_title">Olfaphony</div>
-        <div class="entry_thumbnail"><img src="old_works/thumbnails/a09.jpg"/></div>
-        <div class="entry_name">今井 裕太、大畠 拓真、<br>中村 知滉、柳瀬 龍成</div>
+      <a class="entry" data-entry-number="09" data-year="2026" href="#detail-2026-09" onclick="openDetail(this)">
+        <div class="entry_title">横浜の未来を守る・繋ぐ —吉祥文様が見守る都市インフラ—</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a09.jpg"/></div>
+        <div class="entry_name">蛇石 安珠、蛇石 果杏、<br>李 志遠、荻原 慎二</div>
       </a>
 
-      <a class="entry" data-entry-number="10" href="#detail-10" onclick="openDetail(this)">
-        <div class="entry_title">視線が創る世界</div>
-        <div class="entry_thumbnail"><img src="old_works/thumbnails/a10.jpg"/></div>
-        <div class="entry_name">上村 悠人、片岡 昇吾、<br>加藤 僚太郎、山本 英明</div>
+      <a class="entry" data-entry-number="10" data-year="2026" href="#detail-2026-10" onclick="openDetail(this)">
+        <div class="entry_title">Invisible Motion：モアレが映すインフラの鼓動</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a10.jpg"/></div>
+        <div class="entry_name">李 志遠、蛇石 安珠</div>
       </a>
 
-    <!-- No.11~13 -->
-      <a class="entry" data-entry-number="11" href="#detail-11" onclick="openDetail(this)">
-        <div class="entry_title">Violinの３次元立体可視化</div>
-        <div class="entry_thumbnail"><img src="old_works/thumbnails/a11.jpg"/></div>
-        <div class="entry_name">浅田 仁志</div>
-      </a>
-        
-      <a class="entry" data-entry-number="12" href="#detail-12" onclick="openDetail(this)">
-        <div class="entry_title">表面張力が奏でる奇跡の芸術</div>
-        <div class="entry_thumbnail"><img src="old_works/thumbnails/a12.jpg"/></div>
-        <div class="entry_name">齋藤 謙太、坂本 翔、稲垣 照美</div>
+    <!-- No.11~15 -->
+      <a class="entry" data-entry-number="11" data-year="2026" href="#detail-2026-11" onclick="openDetail(this)">
+        <div class="entry_title">言葉の星図</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a11.jpg"/></div>
+        <div class="entry_name">桑原 真一郎</div>
       </a>
 
-      <a class="entry" data-entry-number="13" href="#detail-13" onclick="openDetail(this)">
-        <div class="entry_title">Stillness in Motion: A Meditative Journey</div>
-        <div class="entry_thumbnail"><img src="old_works/thumbnails/a13.jpg"/></div>
-        <div class="entry_name">村上 里子、切島 忠昭</div>
+      <a class="entry" data-entry-number="12" data-year="2026" href="#detail-2026-12" onclick="openDetail(this)">
+        <div class="entry_title">熟語における漢字の貢献度</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a12.png"/></div>
+        <div class="entry_name">小林 都央</div>
       </a>
 
+      <a class="entry" data-entry-number="13" data-year="2026" href="#detail-2026-13" onclick="openDetail(this)">
+        <div class="entry_title">How AI Reads "Art" ／ AIが芸術を読む</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a13.jpg"/></div>
+        <div class="entry_name">前田 聡</div>
+      </a>
 
-      <a href="https://codria.github.io/art2025/" class="link-box">
-        Art Contest 2025 を見る<span class="arrow"> &nearr;</span>
+      <a class="entry" data-entry-number="14" data-year="2026" href="#detail-2026-14" onclick="openDetail(this)">
+        <div class="entry_title">写真から広がる思い出の可視化</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a14.jpg"/></div>
+        <div class="entry_name">高山 航輔、高山 悠太、吉沼 智</div>
+      </a>
+
+      <a class="entry" data-entry-number="15" data-year="2026" href="#detail-2026-15" onclick="openDetail(this)">
+        <div class="entry_title">The Art of Particle Tracking</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a15.jpg"/></div>
+        <div class="entry_name">Peruchi Zanca Augusto Henrique、<br>本告 遊太郎、後藤 晋</div>
+      </a>
+
+    <!-- No.16~19 -->
+      <a class="entry" data-entry-number="16" data-year="2026" href="#detail-2026-16" onclick="openDetail(this)">
+        <div class="entry_title">Metronome flame</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a16.jpg"/></div>
+        <div class="entry_name">矢作 裕司、新飯田 翔一</div>
+      </a>
+
+      <a class="entry" data-entry-number="17" data-year="2026" href="#detail-2026-17" onclick="openDetail(this)">
+        <div class="entry_title">文字のカシカ</div>
+        <div class="entry_thumbnail"><img src="works/thumbnails/a17.jpg"/></div>
+        <div class="entry_name">髙沢 星成、櫻井 遼、<br>三谷 東生、保高 悠人、池尾 快</div>
+      </a>
+
+      <a class="entry pending" data-entry-number="18" data-year="2026" href="#detail-2026-18" onclick="openDetail(this)">
+        <div class="entry_title">移動奇跡による一筆書き</div>
+        <div class="entry_thumbnail"></div>
+        <div class="entry_name">沖田 京子</div>
+      </a>
+
+      <a class="entry pending" data-entry-number="19" data-year="2026" href="#detail-2026-19" onclick="openDetail(this)">
+        <div class="entry_title">#FFFFFF ～あなたの中の、見えない偏り～</div>
+        <div class="entry_thumbnail"></div>
+        <div class="entry_name">大石 苺果、大石 懐子</div>
       </a>
     </div>
-    
+
+    <!-- 昨年度応募作品（折り畳み） -->
+    <details class="archive-section">
+      <summary>
+        <div class="section_title">
+          <div class="section_title_en">LAST YEAR’S ENTRIES</div>
+          <div class="section_title_jp">昨年度応募作品</div>
+        </div>
+      </summary>
+
+      <div class="flex_wrapper">
+      <!-- No.1~5 -->
+        <a class="entry" data-entry-number="01" data-year="2025" href="#detail-2025-01" onclick="openDetail(this)">
+          <div class="entry_title">クラゲ型ロボットによる渦構造</div>
+          <div class="entry_thumbnail"><img src="old_works/thumbnails/a01.jpg"/></div>
+          <div class="entry_name">MANAKIJSIRISUTHI POON、<br>美甘 見真</div>
+        </a>
+
+        <a class="entry" data-entry-number="02" data-year="2025" href="#detail-2025-02" onclick="openDetail(this)">
+          <div class="entry_title">東京メトロの路線ネットワーク図</div>
+          <div class="entry_thumbnail"><img src="old_works/thumbnails/a02.jpg"/></div>
+          <div class="entry_name">高松 一鷹、高階 柊平</div>
+        </a>
+
+        <a class="entry" data-entry-number="03" data-year="2025" href="#detail-2025-03" onclick="openDetail(this)">
+          <div class="entry_title">Loudscape；練習前のボク</div>
+          <div class="entry_thumbnail"><img src="old_works/thumbnails/a03.jpg"/></div>
+          <div class="entry_name">沖田 京子、前田 聡</div>
+        </a>
+
+        <a class="entry" data-entry-number="04" data-year="2025" href="#detail-2025-04" onclick="openDetail(this)">
+          <div class="entry_title">モザイクアート</div>
+          <div class="entry_thumbnail"><img src="old_works/thumbnails/a04.jpg"/></div>
+          <div class="entry_name">吉沼 智</div>
+        </a>
+
+        <a class="entry" data-entry-number="05" data-year="2025" href="#detail-2025-05" onclick="openDetail(this)">
+          <div class="entry_title">Fallen Azaleas in the Wind</div>
+          <div class="entry_thumbnail"><img src="old_works/thumbnails/a05.jpg"/></div>
+          <div class="entry_name">細谷 和範</div>
+        </a>
+
+      <!-- No.6~10 -->
+        <a class="entry" data-entry-number="06" data-year="2025" href="#detail-2025-06" onclick="openDetail(this)">
+          <div class="entry_title">どちらに旋回しているように見えますか？</div>
+          <div class="entry_thumbnail"><img src="old_works/thumbnails/a06.jpg"/></div>
+          <div class="entry_name">澤田 祐希、新川 大治朗、白石 耕一郎</div>
+        </a>
+
+        <a class="entry" data-entry-number="07" data-year="2025" href="#detail-2025-07" onclick="openDetail(this)">
+          <div class="entry_title">錯視図等を対象としたエントロピー解析</div>
+          <div class="entry_thumbnail"><img src="old_works/thumbnails/a07.jpg"/></div>
+          <div class="entry_name">後藤 芙美子、長嶋 敏照、土田 賢省</div>
+        </a>
+
+        <a class="entry" data-entry-number="08" data-year="2025" href="#detail-2025-08" onclick="openDetail(this)">
+          <div class="entry_title">浮力が奏でる安定の世界</div>
+          <div class="entry_thumbnail"><img src="old_works/thumbnails/a08.jpg"/></div>
+          <div class="entry_name">西川 泰雅、稲垣 照美</div>
+        </a>
+
+        <a class="entry" data-entry-number="09" data-year="2025" href="#detail-2025-09" onclick="openDetail(this)">
+          <div class="entry_title">Olfaphony</div>
+          <div class="entry_thumbnail"><img src="old_works/thumbnails/a09.jpg"/></div>
+          <div class="entry_name">今井 裕太、大畠 拓真、<br>中村 知滉、柳瀬 龍成</div>
+        </a>
+
+        <a class="entry" data-entry-number="10" data-year="2025" href="#detail-2025-10" onclick="openDetail(this)">
+          <div class="entry_title">視線が創る世界</div>
+          <div class="entry_thumbnail"><img src="old_works/thumbnails/a10.jpg"/></div>
+          <div class="entry_name">上村 悠人、片岡 昇吾、<br>加藤 僚太郎、山本 英明</div>
+        </a>
+
+      <!-- No.11~13 -->
+        <a class="entry" data-entry-number="11" data-year="2025" href="#detail-2025-11" onclick="openDetail(this)">
+          <div class="entry_title">Violinの３次元立体可視化</div>
+          <div class="entry_thumbnail"><img src="old_works/thumbnails/a11.jpg"/></div>
+          <div class="entry_name">浅田 仁志</div>
+        </a>
+
+        <a class="entry" data-entry-number="12" data-year="2025" href="#detail-2025-12" onclick="openDetail(this)">
+          <div class="entry_title">表面張力が奏でる奇跡の芸術</div>
+          <div class="entry_thumbnail"><img src="old_works/thumbnails/a12.jpg"/></div>
+          <div class="entry_name">齋藤 謙太、坂本 翔、稲垣 照美</div>
+        </a>
+
+        <a class="entry" data-entry-number="13" data-year="2025" href="#detail-2025-13" onclick="openDetail(this)">
+          <div class="entry_title">Stillness in Motion: A Meditative Journey</div>
+          <div class="entry_thumbnail"><img src="old_works/thumbnails/a13.jpg"/></div>
+          <div class="entry_name">村上 里子、切島 忠昭</div>
+        </a>
+
+
+        <a href="https://codria.github.io/art2025/" class="link-box">
+          Art Contest 2025 を見る<span class="arrow"> &nearr;</span>
+        </a>
+      </div>
+    </details>
 
 
 
@@ -332,7 +457,7 @@
       <div class="section_title_en">SPECIAL THANKS</div>
       <div class="section_title_jp">ご協力いただいた皆様（順不同）</div>
     </div>
-    
+
     <div class="flex_wrapper">
       <div class="organizer-card">
         <div class="name"></div>
@@ -361,9 +486,463 @@
       <button id="close-btn" onclick="closeDetail()">閉じる</button>
     </div>
 
-    <!-- 作品詳細 -->
+    <!-- 作品詳細 (2026年度) -->
     <!-- hiddenクラスをJavaScriptで差し込むことで、JavaScriptオフで拡大表示できない場合に通常表示で閲覧する -->
-    <div class="detail" id="detail-01">
+    <div class="detail" id="detail-2026-01">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 01</div>
+        <div class="section_title_jp">応募作品 01</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a01.jpeg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>Violinの３次元音響放射立体可視化</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>浅田 仁志</td></tr>
+            <tr><th>公開URL</th><td><a href="works/a01.mp4" target="_blank">本サーバー</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　Violinにおける数値解析結果(A.Stradivariの実在個体)から抽出したHelmholz共鳴(A0モード)の音響放射可視化イメージを作成。構造振動と音響現象を重ね合わせレンダリングすることで、構造振動と空気が連成しfホールから音響放射が生じる経過を３次元立体可視化した。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-2026-02">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 02</div>
+        <div class="section_title_jp">応募作品 02</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a02.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>The Silent Landing of a Camellia</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>細谷 和範</td></tr>
+            <tr><th>公開URL</th><td><a href="https://youtu.be/SGnB2cqKreg" target="_blank">https://youtu.be/SGnB2cqKreg</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　椿の花は花冠ごと落花し，上を向いて着地します。<br>
+          　このユニークな振る舞いは，寺田寅彦博士（1878–1935）の研究によって，花冠の空力特性によるものであることが知られています。<br>
+          　本作品では，ツバキの花冠が地面に落花した後のふるまいに注目しました。不思議なことに，ツバキは地面に衝突しても大きく跳ね返ることなく，静かに着地します。高速カメラを用いて花びらの挙動を観察すると，衝突の瞬間に花弁がダイナミックにしなり，振動しながら衝撃エネルギーを吸収する様子が見られました。<br>
+          　静かで力強く，そして美しいツバキの不思議な落花現象をお楽しみください。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-2026-03">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 03</div>
+        <div class="section_title_jp">応募作品 03</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a03.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>海底火山噴火の軽石漂流シミュレーション</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>山辺 真幸、西川 悠、桑谷 立、黒木 聖夫</td></tr>
+            <tr><th>公開URL</th><td><a href="https://vimeo.com/1109314883" target="_blank">https://vimeo.com/1109314883</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　2021年8月の福徳岡ノ場海底噴火では、放出された大量の軽石が日本各地の港や島に漂着し、漁業や海上交通に深刻な被害をもたらした。日本近海ではこうした現象が20〜30年に一度繰り返されており、軽石の漂着時期や場所を事前に見積もることは防災上の重要課題である。本作品は、過去100年の間に軽石を放出した日本近海の7つの海底火山 ― 福徳岡ノ場、伊豆東部火山群、三宅島、海徳海山、西之島、ベヨネース列岩、西表島北北東 ― から放出された軽石が、黒潮・黒潮再循環・対馬暖流に運ばれて漂流するさまを、粒子追跡シミュレーションの結果に基づいて可視化したものである。各火山について、放流開始から365日間の漂流を描いた。暗い海洋上に一つひとつの軽石の軌跡を発光する光跡として描き、その集積を光の濃淡で表現している。時間の経過とともに軽石は中規模渦に捕捉されて渦を巻き、密集と拡散を繰り返しながら広大な海域へ広がっていく。海洋物理学が数式と統計で記述してきた海流のふるまいが、無数の光跡が織りなす動的な模様として立ち現れる。可視化の元データは Nishikawa et al. (2023, Progress in Earth and Planetary Science, 10:21, <a href="https://doi.org/10.1186/s40645-023-00552-4" target="_blank">https://doi.org/10.1186/s40645-023-00552-4</a>) によるシミュレーション結果である。本作品は、軽石漂流のインタラクティブなハザードマップ構築を目指す研究プロジェクトの一環として制作された。<br>
+          　本作品は JSPS 科研費 基盤研究(B)「高精度軽石漂流予測に基づくインタラクティブハザードマップの作成」(課題番号 24K01139、研究代表者:西川悠) の成果の一部である。<br>
+          <small>制作者：山辺真幸<sup>1</sup>, 西川悠<sup>2</sup>, 桑谷立<sup>2</sup>, 黒木聖夫<sup>2</sup><br>
+          1) 一橋大学大学院ソーシャル・データサイエンス研究科、慶應義塾大学メディア・デザイン研究科　 2) 海洋研究開発機構</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-2026-04">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 04</div>
+        <div class="section_title_jp">応募作品 04</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a04.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>Frozen Karman vortex</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>岩野 耕治</td></tr>
+            <tr><th>公開URL</th><td><a href="https://youtu.be/1NOTzBSdpBU" target="_blank">https://youtu.be/1NOTzBSdpBU</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　段ボールで製作した小型風洞内でカルマン渦列を可視化しました．光の当て方を工夫することでカルマン渦を止めました．
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-2026-05">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 05</div>
+        <div class="section_title_jp">応募作品 05</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a05.png" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>AIを用いた手影絵のインタラクティブアート</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>深石 愛梨、宮地 英生、飯田 周一</td></tr>
+            <tr><th>公開URL</th><td><a href="works/a05.mp4" target="_blank">本サーバー</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　手影絵で表現されたペンギンの背景に動的な南極のイメージ画像を挿入する。<br>
+          　手影絵の２Dのペンギンの姿勢を学習させ、その姿勢を動的に推定し、ペンギンの移動方向に合わせて背景のスライド方向を変化させることでペンギンが移動しているように、また、ペンギンの動作量に応じて背景の氷の赤色強度を強くする演出を行った。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-2026-06">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 06</div>
+        <div class="section_title_jp">応募作品 06</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a06.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>Still Symmetry</td></tr>
+            <tr><th>作品形態</th><td>画像</td></tr>
+            <tr><th>製作者</th><td>Yuta SHIGA</td></tr>
+            <tr><th>公開URL</th><td><a href="works/a06.jpg" target="_blank">本サーバー</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　In landscape photography, the specular reflection (water mirror) on a lake's surface is a paramount element that brings perfect symmetry and an overwhelming sense of tranquility to the frame. However, capturing the exact moment when the wind completely dies down, aligned with the perfect lighting and weather conditions, is exceptionally difficult—it is a miraculous encounter with nature.<br>
+          　Based on the natural formations captured at the shooting location, this artwork utilizes "minimal image processing" to express the ideal specular reflection that could have existed. By blurring the line between the actual landscape (the real image) and the digitally enhanced water surface (the virtual image), this work invites viewers to contemplate the beauty of nature and the possibilities of visual expression.
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-2026-07">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 07</div>
+        <div class="section_title_jp">応募作品 07</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a07.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>鼓動を見る -Visualization of heartbeat-</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>藤田 拓希、佐山 開都、内田 太士、<br>堀井 ももこ、チェ ミョンホン</td></tr>
+            <tr><th>公開URL</th><td><a href="https://youtu.be/KlE6RIvFT8s" target="_blank">https://youtu.be/KlE6RIvFT8s</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　動物によって鼓動の速さは大きく異なる。本作品では、それぞれの動物が刻む鼓動を視覚的な表現へと変換し、普段は目にすることのできない生命のリズムを可視化した。大きな動物と小さな動物、それぞれが持つ異なる時間の流れや生き方の違いを、鼓動という共通の指標を通して感じてもらいたい。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-2026-08">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 08</div>
+        <div class="section_title_jp">応募作品 08</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a08.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>Biojectory</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>杉山 裕也、岩山 うみ、永山 遼、<br>藤田 優翔、脇田 康暉</td></tr>
+            <tr><th>公開URL</th><td><a href="https://youtu.be/nXVVDsX7SDc" target="_blank">https://youtu.be/nXVVDsX7SDc</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　複数の生き物の移動軌跡を可視化し、通過回数が多い場所の「つながり」を表現する作品です。このつながりを表現するにあたり、「星座」の考え方を取り入れることにしました。星座は、点在する星を人間が結びつけて意味を与えたものです。これと同様に、生物の頻出ルートの重なりを「夜空の星座」に見立てて再解釈し、新たなつながりとして描き出すことを意図しています。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-2026-09">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 09</div>
+        <div class="section_title_jp">応募作品 09</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a09.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>横浜の未来を守る・繋ぐ —吉祥文様が見守る都市インフラ—</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>蛇石 安珠、蛇石 果杏、李 志遠、荻原 慎二</td></tr>
+            <tr><th>公開URL</th><td><a href="https://youtu.be/6EPW5WjP95c" target="_blank">https://youtu.be/6EPW5WjP95c</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　港町としての歴史が大切に受け継がれている観光都市，横浜．一方で，都市を支えるインフラの老朽化が課題となっており，安全で快適な都市環境を維持するための新たなモニタリング技術が求められています．我々は，吉祥文様を用いたインフラ構造物の長期に渡る高精度な変位計測技術が，この課題の解決に向けた一つの糸口になると考えています．本作品は，横浜の都市インフラの保全をコンセプトに，景観に調和するモアレマーカーを表現したアート作品です．
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-2026-10">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 10</div>
+        <div class="section_title_jp">応募作品 10</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a10.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>Invisible Motion：モアレが映すインフラの鼓動</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>李 志遠、蛇石 安珠</td></tr>
+            <tr><th>公開URL</th><td><a href="https://youtu.be/waw8kCTDo8c" target="_blank">https://youtu.be/waw8kCTDo8c</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　橋梁やダムなどのインフラ構造物は、荷重や風、温度変化によって常にわずかに変形している。しかし、その変位は人の目では捉えられないほど微小である。本作品では、モアレ現象を利用した位相画像解析技術により、これまで見えなかったインフラの微小な動きや振動を可視化する。インフラの健全性評価を支える最先端技術と、目に見えない現象を可視化する科学の魅力を体感できる作品である。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-2026-11">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 11</div>
+        <div class="section_title_jp">応募作品 11</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a11.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>言葉の星図</td></tr>
+            <tr><th>作品形態</th><td>Webサイト</td></tr>
+            <tr><th>製作者</th><td>桑原 真一郎</td></tr>
+            <tr><th>公開URL</th><td><a href="https://kenbunroku.github.io/kohaku/" target="_blank">https://kenbunroku.github.io/kohaku/</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　本作は、NHK紅白歌合戦の全76回（1951–2025）で歌われた歌詞を対象に、内容語の意味関係を三次元空間へ配置した可視化作品である。<br>
+          　各単語は意味の近さに応じて星として配置される。本作が着目するのは、同じ言葉が時代とともに異なる文脈を獲得していく現象（意味ドリフト）である。「愛」「夢」「故郷」などの語を対象に、それらがどのような言葉と結びつき、意味空間の中でどのように位置を変えてきたかを軌跡として描く。<br>
+          　鑑賞者は年代を切り替えながら、言葉どうしの関係が変化していく様子を観察できる。高度経済成長期、バブル崩壊後、東日本大震災、コロナ禍などを経て、語の近傍関係やクラスタ構造は少しずつ姿を変えていく。同じ言葉であっても、その周囲に現れる語が変われば、そこから読み取れる意味の輪郭も変化する。<br>
+          　紅白歌合戦は、長期間にわたり継続的に蓄積されてきた歌詞アーカイブでもある。本作はその蓄積を俯瞰しながら、時代とともに変化する言葉の関係性を一枚の星図として描き出す試み。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-2026-12">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 12</div>
+        <div class="section_title_jp">応募作品 12</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a12.png" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>熟語における漢字の貢献度</td></tr>
+            <tr><th>作品形態</th><td>Webサイト</td></tr>
+            <tr><th>製作者</th><td>小林 都央</td></tr>
+            <tr><th>公開URL</th><td><a href="https://tozaburo.github.io/kanji-semantic-weight/" target="_blank">https://tozaburo.github.io/kanji-semantic-weight/</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　漢字で構成された熟語を入力すると、それぞれの漢字が熟語の意味にどれだけ貢献しているかを可視化します。<br>
+          　例えば、「電子」では「電」が92.0%、「子」が8.0%と大きな差があることが一目でわかります。<br>
+          　本作品では漢字のみで構成された熟語と漢字の単語ベクトルを読み込み、熟語の意味を表わすベクトルと漢字の意味を表わすベクトルのコサイン類似度を計算し、それをもとに割合を表示しています。単語ベクトルにはchiVeを利用しています。<br>
+          　単にデータとして示すのではなく、割合をもとに漢字の色を変え、計算時に滑らかなアニメーションを入れることでアートとしても楽しめるようにしました。配色には人間の視覚に近いとされるOKLCH色空間を使い、自然な見た目になるよう心掛けました。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-2026-13">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 13</div>
+        <div class="section_title_jp">応募作品 13</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a13.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>How AI Reads "Art" ／ AIが芸術を読む</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>前田 聡</td></tr>
+            <tr><th>公開URL</th><td><a href="https://youtu.be/m1wLBfNarnk" target="_blank">https://youtu.be/m1wLBfNarnk</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　本作は、MarkupLM-baseがWikipedia英語版「Art」ページを読むときの注目（Attention）を、立体都市として可視化したものである。ページ上の一つひとつのテキストは、モデルが向けた注目の強さに応じた高さのビルとなり、Transformerの12層を青から赤のグラデーションで積層する。浅い層では注目が広く分散し、深い層では少数のテキストに集中するため、ビルは下方が薄く上方ほど厚くなりやすい。各ビルの最上部には、全層の平均値を表す白い層が乗る。映像は一枚のWikipediaページから始まる。やがてテキストが情報の重みに合わせて地面から立ち上がり、それに伴って影が落ちて街並みが立体として浮かび上がる。ビルの屋上にはそのテキストが置かれていた領域がそのまま貼られているため、街が平らに畳まれれば、全体は再び一枚のページに戻る。高いビルに照らされる箇所と、隣のビルの影に沈む箇所は、そのままAIが強く読んだ場所と読み飛ばした場所に対応している。街並みは立ち上がっては再び畳まれるという循環を繰り返す。<br>
+          　街並みの一角に並んだ絵画は、AIには届いていない。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-2026-14">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 14</div>
+        <div class="section_title_jp">応募作品 14</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a14.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>写真から広がる思い出の可視化</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>高山 航輔、高山 悠太、吉沼 智</td></tr>
+            <tr><th>公開URL</th><td><a href="works/a14.mp4" target="_blank">本サーバー</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　これまでに撮影した写真をもとに制作した作品です。<br>
+          　本作品では、それらの写真をRoblox上の仮想空間に配置し、思い出をたどるように巡ることができる世界を表現しました。<br>
+          　空間の中を歩きながら写真を見ていくことで、過去の出来事や当時の記憶が少しずつよみがえります。<br>
+          　写真を見るだけではなく、その写真から広がる記憶や感情を体験できることを目指しました。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-2026-15">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 15</div>
+        <div class="section_title_jp">応募作品 15</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a15.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>The Art of Particle Tracking</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>Peruchi Zanca Augusto Henrique、本告 遊太郎、後藤 晋</td></tr>
+            <tr><th>公開URL</th><td><a href="https://youtu.be/JLfHgfiNonw" target="_blank">https://youtu.be/JLfHgfiNonw</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　Particle shadow velocimetry relies on the imaging of tracer particle shadows instead of using conventional illumination systems and allows us to conduct measurements of complex flows such as with the presence of bubbles in turbulent flow.<br>
+          　This video presents the process of particle tracking in a new and visual way, detailing the steps taken by a newly developed algorithm, from the input images to the final velocity field in the case of a turbulent bubbly flow.<br>
+          　粒子シャドウ流速計（Particle Shadow Velocimetry）は、従来の照明システムの代わりにトレーサー粒子の影をイメージングする技術であり、乱流中の気泡混入といった複雑な流れの計測を可能にします。本映像では、粒子追跡のプロセスを新しく視覚的な手法で表現しています。新規開発されたアルゴリズムが、入力画像から気泡を含めた乱流の最終的な速度場を導き出すまでのステップを詳細に描いています。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-2026-16">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 16</div>
+        <div class="section_title_jp">応募作品 16</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a16.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>Metronome flame</td></tr>
+            <tr><th>作品形態</th><td>画像</td></tr>
+            <tr><th>製作者</th><td>矢作 裕司、新飯田 翔一</td></tr>
+            <tr><th>公開URL</th><td><a href="works/a16.png" target="_blank">本サーバー</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　噴流拡散火炎は低レイノルズ数条件においてフリッカリングと呼ばれる火炎先端部が上下に振動する現象が観察される．密度差と速度に起因するKelvin-Helmholtzの不安定性が現象を支配し，振幅の増大により火炎が引きちぎれる．この映像は，引きちぎられた火炎と基部の火炎を繋ぐ燃料流にアルミナ粒子を用いたレーザートモグラフィーに可視化して，メトロノームを表現した．観察されたフリッカリング周波数は12Hzであり，音楽のリズムとしてはかなり早いが振動燃焼としては遅い現象である．<br>
+          <small>撮影条件：Nikon D5, Lens 105mm, f/8, 1/640s, ISO 8000.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-2026-17">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 17</div>
+        <div class="section_title_jp">応募作品 17</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"><img src="works/thumbnails/a17.jpg" /></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>文字のカシカ</td></tr>
+            <tr><th>作品形態</th><td>動画</td></tr>
+            <tr><th>製作者</th><td>髙沢 星成、櫻井 遼、三谷 東生、<br>保高 悠人、池尾 快</td></tr>
+            <tr><th>公開URL</th><td><a href="https://youtu.be/rjMi3ZaDjmg" target="_blank">https://youtu.be/rjMi3ZaDjmg</a></td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　「可視化情報学会」という文字の周囲に、流れを与えたらどのような現象が現れるのか。本作品では、文字そのものを単なる記号ではなく、流れを受ける物体形状として扱い、その周囲の流れを可視化しています。文字列のまわりに生じる流れ場を、渦度・速度・圧力といった物理量で評価してみました。<br>
+          <br>
+          　「可視化情報学会」「ウズド」「ソクドバ」「アツリョクバ」といった文字がどのように「カシカ」されるのか。<br>
+          <br>
+          　ぜひご覧ください！<br>
+          <br>
+          <small>使用フォント: Noto Sans CJK (SIL Open Font License 1.1)</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-2026-18">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 18</div>
+        <div class="section_title_jp">応募作品 18</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>移動奇跡による一筆書き</td></tr>
+            <tr><th>作品形態</th><td>画像、Robloxデータ</td></tr>
+            <tr><th>製作者</th><td>沖田 京子</td></tr>
+            <tr><th>公開URL</th><td>(提出状況確認中)</td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　本作品は、Googleマップの位置履歴（タイムライン）を用いて、ある一日の移動軌跡を一本の線として可視化した作品である。<br>
+          　人は日々、仕事や学習、買い物、人との交流など、さまざまな目的を持って移動している。しかし、その行動は通常、時間とともに消えていき、全体像を意識することは少ない。<br>
+          　本作品では、位置情報として記録された移動履歴を地図情報から切り離し、純粋な「線」として再構成することで、一日の行動を一筆書きのような表現へと変換した。<br>
+          　一本の線は、単なる移動経路であると同時に、その人がその日にたどった経験や選択の痕跡でもある。
+        </div>
+      </div>
+    </div>
+
+    <div class="detail" id="detail-2026-19">
+      <div class="section_title">
+        <div class="section_title_en">ENTRY 19</div>
+        <div class="section_title_jp">応募作品 19</div>
+      </div>
+      <div class="entry_detail">
+        <div class="entry_detail_thumbnail"></div>
+        <table>
+          <tbody>
+            <tr><th>作品名</th><td>#FFFFFF ～あなたの中の、見えない偏り～</td></tr>
+            <tr><th>作品形態</th><td>画像</td></tr>
+            <tr><th>製作者</th><td>大石 苺果、大石 懐子</td></tr>
+            <tr><th>公開URL</th><td>(提出状況確認中)</td></tr>
+          </tbody>
+        </table>
+        <div class="entry_detail_abstract">
+          <h5>作品概要</h5>
+          　あなたは「看護師」や「警察官｣と聞いて、何色を思い浮かべますか？<br>
+          　私はこの問いを、同世代の高校生や身近な大人たちに投げかけました。職業から連想する色を選んでもらい、その結果を一枚の画像として可視化したのがこの作品です。<br>
+          　集まった色は、男性イメージの職業と女性イメージの職業を境に、左右に分かれて並んでいます。境界線はくっきりと引かれています。<br>
+          　その線を引いたのは、私たちではありません。でも、その線を強くしたのは、私たちかもしれません。<br>
+          　職業に色はありません。カラーコードで言えば #FFFFFF、真っ白なはずです。それなのになぜ、人は職業に色をつけてしまうのか。そのイメージはどこから来たのか。<br>
+          　色のイメージの背景にある職業とジェンダーの関係を考え、いつかこの境界線が無くなるようにしたいと思いこの作品を作りました。
+        </div>
+      </div>
+    </div>
+
+    <!-- 作品詳細 (2025年度) -->
+    <div class="detail" id="detail-2025-01">
       <!-- <div class="sticker top6">TOP6</div> 上位作品用ステッカー -->
       <div class="sticker taisho">大賞</div>
       <div class="section_title">
@@ -388,7 +967,7 @@
       </div>
     </div>
 
-    <div class="detail" id="detail-02">
+    <div class="detail" id="detail-2025-02">
       <!-- <div class="sticker top6">TOP6</div> 上位作品用ステッカー -->
       <div class="sticker nyuusho">入賞</div>
       <div class="section_title">
@@ -413,7 +992,7 @@
       </div>
     </div>
 
-    <div class="detail" id="detail-03">
+    <div class="detail" id="detail-2025-03">
       <div class="section_title">
         <div class="section_title_en">ENTRY 03</div>
         <div class="section_title_jp">応募作品 03</div>
@@ -436,7 +1015,7 @@
       </div>
     </div>
 
-    <div class="detail" id="detail-04">
+    <div class="detail" id="detail-2025-04">
       <div class="section_title">
         <div class="section_title_en">ENTRY 04</div>
         <div class="section_title_jp">応募作品 04</div>
@@ -458,7 +1037,7 @@
       </div>
     </div>
 
-    <div class="detail" id="detail-05">
+    <div class="detail" id="detail-2025-05">
       <!-- <div class="sticker top6">TOP6</div> 上位作品用ステッカー -->
       <div class="sticker ginsho">銀賞</div>
       <div class="section_title">
@@ -478,12 +1057,12 @@
         </table>
         <div class="entry_detail_abstract">
           <h5>作品概要</h5>
-          　咲いている花ではなく，落花した花が風の流れの中で魅せるユニークな振る舞いを動画にしました．<br>　街中や公園でよく見かけるツツジやサツキは，多くが合弁花冠の形状を維持したまま落花します．落花した花は横を向いたり，伏せた姿勢になったりとさまざまですが，初夏に吹く風や道路を通行する自動車が作り出す風によって飛ばされると，多くの花が伏せた状態になってその場に留まります．このユニークな現象を流れの可視化実験や水理実験により評価したところ，重心の位置だけでなく，花の姿勢によって大きく異なる揚力係数や抗力係数が大きく影響していることがわかりました．<br>　落下後の花が魅せる振る舞いをぜひお楽しみください．
+          　咲いている花ではなく，落花した花が風の流れの中で魅せるユニークな振る舞いを動画にしました．<br>　街中や公園でよく見かけるツツジやサツキは，多くが合弁花冠の形状を維持したまま落花します．落花した花は横を向いたり，伏せた姿勢になったりとさまざまですが,初夏に吹く風や道路を通行する自動車が作り出す風によって飛ばされると，多くの花が伏せた状態になってその場に留まります．このユニークな現象を流れの可視化実験や水理実験により評価したところ，重心の位置だけでなく，花の姿勢によって大きく異なる揚力係数や抗力係数が大きく影響していることがわかりました．<br>　落下後の花が魅せる振る舞いをぜひお楽しみください．
         </div>
       </div>
     </div>
 
-    <div class="detail" id="detail-06">
+    <div class="detail" id="detail-2025-06">
       <!-- <div class="sticker top6">TOP6</div> 上位作品用ステッカー -->
       <div class="sticker kinsho">金賞</div>
       <div class="section_title">
@@ -508,7 +1087,7 @@
       </div>
     </div>
 
-    <div class="detail" id="detail-07">
+    <div class="detail" id="detail-2025-07">
       <div class="section_title">
         <div class="section_title_en">ENTRY 07</div>
         <div class="section_title_jp">応募作品 07</div>
@@ -531,7 +1110,7 @@
       </div>
     </div>
 
-    <div class="detail" id="detail-08">
+    <div class="detail" id="detail-2025-08">
       <div class="section_title">
         <div class="section_title_en">ENTRY 08</div>
         <div class="section_title_jp">応募作品 08</div>
@@ -564,7 +1143,7 @@
       </div>
     </div>
 
-    <div class="detail" id="detail-09">
+    <div class="detail" id="detail-2025-09">
       <!-- <div class="sticker top6">TOP6</div> 上位作品用ステッカー -->
       <div class="sticker ginsho">銀賞</div>
       <div class="section_title">
@@ -589,7 +1168,7 @@
       </div>
     </div>
 
-    <div class="detail" id="detail-10">
+    <div class="detail" id="detail-2025-10">
       <!-- <div class="sticker top6">TOP6</div> 上位作品用ステッカー -->
       <div class="sticker nyuusho">入賞</div>
       <div class="section_title">
@@ -614,7 +1193,7 @@
       </div>
     </div>
 
-    <div class="detail" id="detail-11">
+    <div class="detail" id="detail-2025-11">
       <div class="section_title">
         <div class="section_title_en">ENTRY 11</div>
         <div class="section_title_jp">応募作品 11</div>
@@ -637,7 +1216,7 @@
       </div>
     </div>
 
-    <div class="detail" id="detail-12">
+    <div class="detail" id="detail-2025-12">
       <div class="section_title">
         <div class="section_title_en">ENTRY 12</div>
         <div class="section_title_jp">応募作品 12</div>
@@ -653,21 +1232,21 @@
             <tr><th>公開URL</th><td><a href="https://www.mech.ibaraki.ac.jp/~hotaru/Marangoni_Gear/" target="_blank">https://www.mech.ibaraki.ac.jp/~hotaru/Marangoni_Gear/</a></td></tr>
           </tbody>
         </table>
-        <div class="entry_detail_abstract"> 
+        <div class="entry_detail_abstract">
           <h5>作品概要</h5>
           　一般的に表面張力は低温ほど大きくなる．高温壁面と低温壁面間の温度差が生じている空間に液膜厚さ（試験流体の量）が1～2 mmの際，表面張力の作用によって，鋸の刃のような波が静かに回転する．この対流は液膜厚さが3 mm以上になると生じなくなる摩訶不思議な対流である．応募作品の動画の実験条件を以下に示す．
           <table class="abstract_table">
-            <tr><th>試験流体</th><td>KF-96L-1cs</td><th><span class="italic">Ma</span>（マランゴニ数）</td><td>3.54×10^4</td></tr>
-            <tr><th>加熱壁面と冷却壁面の温度差</th><td>25℃</td><th><span class="italic">Pr</span>（プラントル数）</td><td>16.13</td></tr>
-            <tr><th>液膜厚さ</th><td>1.0 mm</td><th><span class="italic">Ra</span>（レイリー数）</td><td>3.87×10^3</td></tr>
-            <tr><th>試験流体粘度</th><td>1.0 cSt</td><th><span class="italic">Bo</span>（ボンド数）</td><td>0.11</td></tr>
-            <tr><th>対流撮影機器</th><td>NEC/Avio R300 Pro</td><th><span class="italic">A</span>（アスペクト比）</td><td>10.00</td></tr>
+            <tr><th>試験流体</th><td>KF-96L-1cs</td><th><span class="italic">Ma</span>（マランゴニ数）</th><td>3.54×10^4</td></tr>
+            <tr><th>加熱壁面と冷却壁面の温度差</th><td>25℃</td><th><span class="italic">Pr</span>（プラントル数）</th><td>16.13</td></tr>
+            <tr><th>液膜厚さ</th><td>1.0 mm</td><th><span class="italic">Ra</span>（レイリー数）</th><td>3.87×10^3</td></tr>
+            <tr><th>試験流体粘度</th><td>1.0 cSt</td><th><span class="italic">Bo</span>（ボンド数）</th><td>0.11</td></tr>
+            <tr><th>対流撮影機器</th><td>NEC/Avio R300 Pro</td><th><span class="italic">A</span>（アスペクト比）</th><td>10.00</td></tr>
           </table>
         </div>
       </div>
     </div>
 
-    <div class="detail" id="detail-13">
+    <div class="detail" id="detail-2025-13">
       <div class="section_title">
         <div class="section_title_en">ENTRY 13</div>
         <div class="section_title_jp">応募作品 13</div>
@@ -696,12 +1275,12 @@
   <!-- フッター -->
   <div class="footer">
     <div class="footer-inner">
-      2013年度の可視化情報シンポジウムで，芸術的に優れた可視化作品に対して「アート賞」を選出するアートセッションが始まりました．本学会名の一部でもある“可視化”を共通のキーワードとして芸術，科学，工学，エンターテイメントなど様々な分野で可視化された作品を一堂に会し，可視化作品として展示します．応募作品は，可視化作品であれば，ジャンルを問わず，CG，映像，インスタレーションなどのデジタルから，絵画，版画，彫刻，オブジェなどのアナログまで，表現形態も自由となっています．多くの皆さんに可視化の新たな一面を鑑賞して頂ければと思っています．また，様々な分野で可視化に携わる人たちの交流の場となり，新たな可視化の創出のきっかけとなればと期待しています。
+      2013年度の可視化情報シンポジウムで，芸術的に優れた可視化作品に対して「アート賞」を選出するアートセッションが始まりました．本学会名の一部でもある“可視化”を共通のキーワードとして芸術，科学,工学，エンターテイメントなど様々な分野で可視化された作品を一堂に会し，可視化作品として展示します．応募作品は，可視化作品であれば，ジャンルを問わず，CG，映像，インスタレーションなどのデジタルから，絵画，版画，彫刻，オブジェなどのアナログまで，表現形態も自由となっています．多くの皆さんに可視化の新たな一面を鑑賞して頂ければと思っています．また，様々な分野で可視化に携わる人たちの交流の場となり，新たな可視化の創出のきっかけとなればと期待しています。
     <div class="copyright">Copyright &copy; <a href="https://www.vsj.jp/" target="_blank">The Visualization Society of Japan</a>. All rights reserved.</div>
     </div>
     <!-- 2025年度ページ改修、サムネイル作成、応募データ入力諸々担当：前田聡(maeda518@toyo.jp) -->
   </div>
-  
+
   <!-- JavaScript：ページ要素を一通り読み込んでから実行するために、この位置に記載 -->
   <script src="js/script.js"></script>
 </body>

@@ -305,6 +305,44 @@ body {
 		-1px  1px 0 #7f462c,
 		 1px  1px 0 #7f462c;
 }
+/* 折り畳みセクション (昨年度等) */
+.archive-section {
+	margin-top: 0;
+}
+.archive-section > summary {
+	cursor: pointer;
+	list-style: none;
+}
+.archive-section > summary::-webkit-details-marker {
+	display: none;
+}
+.archive-section > summary .section_title_en::after {
+	content: '  ▼';
+	font-size: 22px;
+	vertical-align: middle;
+	color: #888;
+	margin-left: 6px;
+}
+.archive-section[open] > summary .section_title_en::after {
+	content: '  ▲';
+}
+.archive-section > summary:hover .section_title_en {
+	filter: brightness(0.7);
+}
+
+/* 提出待ち応募 (作品未提出) */
+.entry.pending {
+	opacity: 0.55;
+	filter: grayscale(70%);
+}
+.entry.pending:hover {
+	filter: grayscale(70%) brightness(1.05);
+}
+.entry.pending .entry_title {
+	color: #666;
+	font-weight: normal;
+}
+
 /* 過年度ページ */
 .link-box {
 	display: inline-flex;
@@ -410,7 +448,7 @@ body {
 
 /* 応募作品の詳細表示部 */
 .entry_detail {
-	width: 720px;
+	width: 960px;
 	margin: 0 auto 40px;
 	display: flex;
 	flex-wrap: wrap;
@@ -426,8 +464,8 @@ body {
 	position: relative;
 	border: 1px solid #000;
 	background-color: #000;
-	width: 230px;
-	height: 230px;
+	width: 480px;
+	height: 270px;
 	overflow: hidden;
 }
 .entry_detail_thumbnail img {
@@ -448,7 +486,7 @@ body {
 	padding: 0 5px;
 	border-bottom: 1px dotted rgba(99, 99, 99, 1);
 	text-align: left;
-	background-color: #eee;
+	background-color: #f5f2e8;
 }
 .entry_detail td {
 	word-break: break-all;
@@ -459,12 +497,19 @@ body {
 }
 .entry_detail_abstract {
 	width: 100%;
-	margin: 20px 5px;
+	margin: 20px 0;
+	padding: 16px 20px;
+	background: #faf8f3;
+	border-left: 4px solid rgba(152, 106, 0, 0.8);
+	border-radius: 0 4px 4px 0;
+	box-sizing: border-box;
 }
 .entry_detail_abstract h5 {
-	font-size: 15px;
+	font-size: 16px;
 	line-height: 1;
-	margin: 10px 0 5px 0;
+	margin: 0 0 12px 0;
+	padding-bottom: 8px;
+	border-bottom: 1px dotted rgba(99, 99, 99, 0.5);
 }
 .abstract_table {	/* 概要にテーブルを付ける応募者有 */
 	width: 80% !important;
@@ -500,6 +545,11 @@ body {
 	text-align: left;
 	background-color: #fff;
 }
+.guideline_detail .closed {
+	color: #888;
+	font-size: 0.9em;
+	margin-left: 6px;
+}
 
 /* 募集要項フローチャート */
 .flow-chart {
@@ -530,6 +580,25 @@ body {
 .step:hover {
   transform: translateY(0) scale(1.1); /* ズレを戻しつつ少し大きく */
   z-index: 10; /* ホバー中だけ一番手前に */
+}
+.step.completed::after {
+  content: '✓';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  width: 38px;
+  height: 38px;
+  background: rgba(152, 106, 0, 0.95);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  pointer-events: none;
+  line-height: 1;
 }
 .step span {
   font-size: 0.8em;
