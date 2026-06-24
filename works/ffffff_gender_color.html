@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>#FFFFFF 〜あなたの中の、見えない偏り〜</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;background:#f5f5f2;color:#1a1a1a;min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:2rem 1rem;}
+.app{width:100%;max-width:560px;background:#fff;border-radius:16px;border:1px solid #e0e0dc;overflow:hidden;box-shadow:0 2px 20px rgba(0,0,0,0.06);}
+.screen{display:none;}
+.screen.active{display:block;}
+
+.title-area{text-align:center;padding:2.5rem 1.5rem 1.5rem;border-bottom:1px solid #e8e8e4;}
+.title-main{font-size:28px;font-weight:500;letter-spacing:0.1em;color:#1a1a1a;}
+.title-sub{font-size:13px;color:#999;margin-top:8px;}
+.body{padding:1.5rem;}
+
+.note-card{background:#f5f5f2;border-radius:10px;padding:1rem 1.25rem;font-size:13px;color:#666;line-height:1.7;margin-bottom:1.5rem;}
+.note-label{font-size:12px;font-weight:600;color:#333;margin-bottom:4px;}
+
+.progress-wrap{display:flex;align-items:center;gap:12px;margin-bottom:2rem;}
+.prog-bg{flex:1;height:3px;background:#e8e8e4;border-radius:2px;}
+.prog-fill{height:100%;background:#1a1a1a;border-radius:2px;transition:width 0.4s ease;}
+.prog-label{font-size:12px;color:#999;white-space:nowrap;}
+
+.job-card{border:1px solid #e0e0dc;border-radius:14px;padding:2rem 1.5rem;text-align:center;margin-bottom:1.5rem;}
+.job-name{font-size:32px;font-weight:500;color:#1a1a1a;margin-bottom:8px;}
+.job-hint{font-size:13px;color:#999;}
+
+.section-label{font-size:13px;color:#999;margin-bottom:10px;}
+
+/* スライダー */
+.slider-wrap{position:relative;margin-bottom:1.5rem;}
+.hue-track{width:100%;height:38px;border-radius:10px;border:1px solid #e0e0dc;cursor:pointer;appearance:none;-webkit-appearance:none;background:linear-gradient(to right,hsl(0,90%,55%),hsl(30,90%,55%),hsl(60,90%,55%),hsl(90,90%,55%),hsl(120,90%,55%),hsl(150,90%,55%),hsl(180,90%,55%),hsl(210,90%,55%),hsl(240,90%,55%),hsl(270,90%,55%),hsl(300,90%,55%),hsl(330,90%,55%),hsl(360,90%,55%));}
+.hue-track::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:26px;height:26px;border-radius:50%;border:3px solid white;box-shadow:0 0 0 1.5px rgba(0,0,0,0.2),0 2px 6px rgba(0,0,0,0.15);cursor:pointer;background:#ff4444;}
+.hue-track::-moz-range-thumb{width:26px;height:26px;border-radius:50%;border:3px solid white;box-shadow:0 0 0 1.5px rgba(0,0,0,0.2);cursor:pointer;background:#ff4444;}
+.light-track{width:100%;height:38px;border-radius:10px;border:1px solid #e0e0dc;cursor:pointer;appearance:none;-webkit-appearance:none;}
+.light-track::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:26px;height:26px;border-radius:50%;border:3px solid white;box-shadow:0 0 0 1.5px rgba(0,0,0,0.2),0 2px 6px rgba(0,0,0,0.15);cursor:pointer;background:#888;}
+.light-track::-moz-range-thumb{width:26px;height:26px;border-radius:50%;border:3px solid white;box-shadow:0 0 0 1.5px rgba(0,0,0,0.2);cursor:pointer;background:#888;}
+
+.preview-row{display:flex;align-items:center;gap:16px;margin-bottom:1.5rem;}
+.color-preview{width:68px;height:68px;border-radius:10px;border:1px solid #e0e0dc;flex-shrink:0;transition:background 0.1s;}
+.color-hex{font-size:14px;color:#999;font-family:'SF Mono','Courier New',monospace;}
+.color-meaning{font-size:12px;color:#bbb;margin-top:6px;}
+
+.btn-primary{width:100%;padding:15px;background:#1a1a1a;color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:500;cursor:pointer;font-family:inherit;}
+.btn-primary:disabled{opacity:0.3;cursor:not-allowed;}
+.btn-secondary{width:100%;padding:13px;background:transparent;color:#999;border:1px solid #ddd;border-radius:10px;font-size:14px;cursor:pointer;margin-top:10px;font-family:inherit;}
+.btn-secondary:hover{background:#f5f5f2;}
+
+/* 結果画面 */
+.result-header{text-align:center;margin-bottom:1.5rem;}
+.result-title{font-size:20px;font-weight:500;margin-bottom:6px;}
+.result-sub{font-size:13px;color:#999;}
+
+.legend-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.legend-item{font-size:12px;color:#999;display:flex;align-items:center;gap:6px;}
+.legend-dot{width:10px;height:10px;border-radius:50%;}
+
+.color-map{display:flex;border-radius:12px;overflow:hidden;border:1px solid #e0e0dc;margin-bottom:1.5rem;min-height:260px;}
+.map-side{flex:1;padding:16px 12px;display:flex;flex-direction:column;gap:10px;}
+.map-left{background:#f7f7f9;border-right:2px dashed #ccc;}
+.map-right{background:#fdf5f7;}
+.map-side-label{font-size:10px;color:#aaa;text-align:center;margin-bottom:4px;letter-spacing:0.05em;}
+.map-item{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.7);border:1px solid rgba(0,0,0,0.06);}
+.map-dot{width:28px;height:28px;border-radius:50%;flex-shrink:0;border:2px solid rgba(255,255,255,0.8);box-shadow:0 1px 4px rgba(0,0,0,0.15);}
+.map-name{font-size:12px;color:#333;}
+.map-empty{font-size:12px;color:#ccc;text-align:center;padding:1rem 0;}
+
+.job-pills{display:flex;flex-wrap:wrap;gap:8px;margin:1.5rem 0;}
+.job-pill{display:flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;border:1px solid #e0e0dc;font-size:13px;color:#333;}
+.pill-swatch{width:12px;height:12px;border-radius:50%;flex-shrink:0;}
+
+.insight-card{background:#f5f5f2;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;font-size:13px;color:#666;line-height:1.7;}
+.insight-label{font-size:12px;font-weight:600;color:#333;margin-bottom:4px;}
+
+.btn-restart{width:100%;padding:13px;background:transparent;color:#333;border:1px solid #ddd;border-radius:10px;font-size:14px;cursor:pointer;margin-top:8px;font-family:inherit;}
+.btn-restart:hover{background:#f5f5f2;}
+.credit{text-align:center;font-size:11px;color:#ccc;padding:1rem;border-top:1px solid #e8e8e4;}
+</style>
+</head>
+<body>
+<div class="app">
+
+<!-- イントロ -->
+<div id="screen-intro" class="screen active">
+  <div class="title-area">
+    <div class="title-main">#FFFFFF</div>
+    <div class="title-sub">〜あなたの中の、見えない偏り〜</div>
+  </div>
+  <div class="body">
+    <p style="font-size:15px;line-height:1.9;color:#333;margin-bottom:1.5rem;">これから10の職業が表示されます。<br>それぞれの職業から<strong style="font-weight:600;">直感的に連想する色</strong>を選んでください。</p>
+    <div class="note-card">
+      <div class="note-label">調査について</div>
+      正解はありません。「なんとなくこの色かな」と感じた色をそのまま選んでください。選んだ色が、後で可視化されます。
+    </div>
+    <button class="btn-primary" onclick="startSurvey()">はじめる</button>
+  </div>
+  <div class="credit">可視化情報学会 アートコンテスト 応募作品</div>
+</div>
+
+<!-- 質問 -->
+<div id="screen-question" class="screen">
+  <div class="title-area" style="padding:1.2rem 1.5rem;">
+    <div class="title-main" style="font-size:18px;">#FFFFFF</div>
+  </div>
+  <div class="body">
+    <div class="progress-wrap">
+      <div class="prog-bg"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
+      <span class="prog-label" id="prog-text">1 / 10</span>
+    </div>
+    <div class="job-card">
+      <div class="job-name" id="job-name">看護師</div>
+      <div class="job-hint">この職業から連想する色は？</div>
+    </div>
+
+    <div class="section-label">色相（どんな色？）</div>
+    <div class="slider-wrap">
+      <input type="range" class="hue-track" id="hue-slider" min="0" max="360" value="180" oninput="onHueChange(this.value)">
+    </div>
+
+    <div class="section-label">明るさ</div>
+    <div class="slider-wrap">
+      <input type="range" class="light-track" id="light-slider" min="10" max="92" value="55" oninput="onLightChange(this.value)" id="light-slider">
+    </div>
+
+    <div class="preview-row">
+      <div class="color-preview" id="color-preview" style="background:#f0f0ee;"></div>
+      <div>
+        <div class="color-hex" id="color-hex">#FFFFFF</div>
+        <div class="color-meaning" id="color-meaning">色相スライダーを動かしてください</div>
+      </div>
+    </div>
+
+    <button class="btn-primary" id="btn-next" onclick="nextJob()" disabled>この色で決定する</button>
+    <button class="btn-secondary" onclick="skipJob()">スキップ</button>
+  </div>
+</div>
+
+<!-- 結果 -->
+<div id="screen-result" class="screen">
+  <div class="title-area" style="padding:1.2rem 1.5rem;">
+    <div class="title-main" style="font-size:18px;">#FFFFFF</div>
+  </div>
+  <div class="body">
+    <div class="result-header">
+      <div class="result-title">あなたの色マップ</div>
+      <div class="result-sub">職業ごとに選んだ色を可視化しました</div>
+    </div>
+    <div class="legend-row">
+      <div class="legend-item"><div class="legend-dot" style="background:#9ca3af;"></div>男性イメージ寄り</div>
+      <div class="legend-item" style="font-size:11px;color:#ccc;">― 境界線 ―</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#d1a3b0;"></div>女性イメージ寄り</div>
+    </div>
+    <div class="color-map">
+      <div class="map-side map-left">
+        <div class="map-side-label">男性イメージ</div>
+        <div id="map-male"></div>
+      </div>
+      <div class="map-side map-right">
+        <div class="map-side-label">女性イメージ</div>
+        <div id="map-female"></div>
+      </div>
+    </div>
+    <div class="job-pills" id="job-pills"></div>
+    <div class="insight-card" id="insight-text"></div>
+    <div class="insight-card">
+      <div class="insight-label">この作品について</div>
+      職業そのものに色はありません。カラーコードで言えば #FFFFFF — 真っ白なはずです。あなたが選んだ色は、どこから来たのでしょうか。
+    </div>
+    <button class="btn-restart" onclick="restart()">もう一度やってみる</button>
+  </div>
+  <div class="credit">可視化情報学会 アートコンテスト 応募作品</div>
+</div>
+
+</div>
+<script>
+const JOBS=[
+  {name:"看護師",gender:"female"},{name:"保育士",gender:"female"},
+  {name:"エンジニア",gender:"male"},{name:"医師",gender:"male"},
+  {name:"消防士",gender:"male"},{name:"栄養士",gender:"female"},
+  {name:"パイロット",gender:"male"},{name:"介護士",gender:"female"},
+  {name:"大工",gender:"male"},{name:"ファッションデザイナー",gender:"female"}
+];
+let curIdx=0,answers=[],curHue=180,curLight=55,hueChanged=false;
+
+function hslToHex(h,s,l){
+  s/=100;l/=100;
+  const a=s*Math.min(l,1-l);
+  const f=n=>{const k=(n+h/30)%12;const c=l-a*Math.max(-1,Math.min(k-3,Math.min(9-k,1)));return Math.round(255*c).toString(16).padStart(2,'0');};
+  return '#'+f(0)+f(8)+f(4);
+}
+function hueDesc(h){
+  if(h<20)return"赤・情熱・力強さ";if(h<45)return"オレンジ・温かさ・親しみ";
+  if(h<75)return"黄・明るさ・知性";if(h<150)return"緑・自然・安定";
+  if(h<195)return"青緑・清涼・専門性";if(h<255)return"青・冷静・信頼";
+  if(h<285)return"紫・神秘・高貴";if(h<330)return"ピンク・柔らかさ・優しさ";
+  return"赤・情熱・力強さ";
+}
+function updateLightBg(){
+  const h=curHue;
+  const bg='linear-gradient(to right,hsl('+h+',80%,10%),hsl('+h+',85%,45%),hsl('+h+',80%,65%),hsl('+h+',60%,92%))';
+  document.getElementById('light-slider').style.background=bg;
+}
+function updateThumbColors(){
+  const hHex=hslToHex(curHue,85,55);
+  const lHex=hslToHex(curHue,78,curLight);
+  const hStyle=document.getElementById('hue-style');
+  hStyle.textContent='.hue-track::-webkit-slider-thumb{background:'+hHex+' !important;}.hue-track::-moz-range-thumb{background:'+hHex+' !important;}.light-track::-webkit-slider-thumb{background:'+lHex+' !important;}.light-track::-moz-range-thumb{background:'+lHex+' !important;}';
+}
+function updatePreview(){
+  const hex=hslToHex(curHue,78,curLight);
+  document.getElementById('color-preview').style.background=hex;
+  document.getElementById('color-hex').textContent=hex.toUpperCase();
+  document.getElementById('color-meaning').textContent=hueDesc(curHue);
+  updateThumbColors();
+}
+function onHueChange(v){
+  curHue=parseInt(v);
+  if(!hueChanged){hueChanged=true;document.getElementById('btn-next').disabled=false;}
+  updateLightBg();
+  updatePreview();
+}
+function onLightChange(v){curLight=parseInt(v);updatePreview();}
+
+function startSurvey(){
+  curIdx=0;answers=[];
+  document.getElementById('screen-intro').classList.remove('active');
+  document.getElementById('screen-question').classList.add('active');
+  showQuestion();
+}
+function showQuestion(){
+  const job=JOBS[curIdx];
+  document.getElementById('job-name').textContent=job.name;
+  document.getElementById('prog-text').textContent=(curIdx+1)+' / '+JOBS.length;
+  document.getElementById('prog-fill').style.width=(curIdx/JOBS.length*100)+'%';
+  curHue=180;curLight=55;hueChanged=false;
+  document.getElementById('hue-slider').value=180;
+  document.getElementById('light-slider').value=55;
+  document.getElementById('color-preview').style.background='#f0f0ee';
+  document.getElementById('color-hex').textContent='#FFFFFF';
+  document.getElementById('color-meaning').textContent='色相スライダーを動かしてください';
+  document.getElementById('btn-next').disabled=true;
+  updateLightBg();
+}
+function nextJob(){
+  answers.push({job:JOBS[curIdx],hex:hslToHex(curHue,78,curLight),hue:curHue,light:curLight});
+  advance();
+}
+function skipJob(){
+  answers.push({job:JOBS[curIdx],hex:null,hue:null,light:null});
+  advance();
+}
+function advance(){
+  curIdx++;
+  if(curIdx>=JOBS.length){showResult();}else{showQuestion();}
+}
+function showResult(){
+  document.getElementById('screen-question').classList.remove('active');
+  document.getElementById('screen-result').classList.add('active');
+  drawMap();drawPills();drawInsight();
+}
+function drawMap(){
+  const mEl=document.getElementById('map-male');
+  const fEl=document.getElementById('map-female');
+  mEl.innerHTML='';fEl.innerHTML='';
+  const mJobs=answers.filter(a=>a.hex&&a.job.gender==='male');
+  const fJobs=answers.filter(a=>a.hex&&a.job.gender==='female');
+  if(!mJobs.length)mEl.innerHTML='<div class="map-empty">回答なし</div>';
+  if(!fJobs.length)fEl.innerHTML='<div class="map-empty">回答なし</div>';
+  mJobs.forEach(a=>{
+    mEl.innerHTML+='<div class="map-item"><div class="map-dot" style="background:'+a.hex+'"></div><div class="map-name">'+a.job.name+'</div></div>';
+  });
+  fJobs.forEach(a=>{
+    fEl.innerHTML+='<div class="map-item"><div class="map-dot" style="background:'+a.hex+'"></div><div class="map-name">'+a.job.name+'</div></div>';
+  });
+}
+function drawPills(){
+  const wrap=document.getElementById('job-pills');wrap.innerHTML='';
+  answers.filter(a=>a.hex).forEach(a=>{
+    wrap.innerHTML+='<div class="job-pill"><div class="pill-swatch" style="background:'+a.hex+'"></div>'+a.job.name+'</div>';
+  });
+}
+function drawInsight(){
+  const done=answers.filter(a=>a.hex);
+  const mA=done.filter(a=>a.job.gender==='male');
+  const fA=done.filter(a=>a.job.gender==='female');
+  const avg=g=>g.length?Math.round(g.reduce((s,a)=>s+a.hue,0)/g.length):null;
+  const mH=avg(mA),fH=avg(fA);
+  let txt='';
+  if(mH!==null&&fH!==null){
+    const diff=Math.abs(mH-fH);
+    txt=diff>60
+      ?'男性イメージの職業の平均色相は'+mH+'°、女性イメージは'+fH+'°。差は'+diff+'°。あなたの中に、職業とジェンダーに関する色の偏りが存在しているかもしれません。'
+      :'男性と女性イメージの職業で選んだ色の差は'+diff+'°。境界線は思ったより薄いかもしれません——あるいは、あなたはすでに気づいていたのかもしれません。';
+  }else{
+    txt='回答ありがとうございました。あなたが選んだ色が、この作品の一部になりました。';
+  }
+  document.getElementById('insight-text').innerHTML='<div class="insight-label">あなたの結果から</div>'+txt;
+}
+function restart(){
+  document.getElementById('screen-result').classList.remove('active');
+  document.getElementById('screen-intro').classList.add('active');
+}
+</script>
+<style id="hue-style"></style>
+</body>
+</html>
