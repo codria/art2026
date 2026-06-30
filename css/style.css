@@ -448,16 +448,20 @@ body {
 
 /* 応募作品の詳細表示部 */
 .entry_detail {
-	width: 960px;
+	width: 100%;
+	min-width: 652px;
+	max-width: 960px;
 	margin: 0 auto 40px;
 	display: flex;
 	flex-wrap: wrap;
+	box-sizing: border-box;
 }
 .entry_detail_no {
 	width: 100%;
 
 }
 .entry_detail_thumbnail {
+	flex: 0 0 480px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -473,12 +477,21 @@ body {
 	max-height: 100%;
 	object-fit: contain;
 }
-.entry_detail table {
-	width: 470px;
+.entry_detail_info {
+	flex: 1 1 0;
+	max-width: 470px;
+	min-width: 0;
+	height: 270px;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+.entry_detail_info table {
+	width: 100%;
+	height: 100%;
+	table-layout: fixed;
 	border-collapse: separate;
 	border-spacing: 0 0px;
 	border: none;
-	padding-left: 10px;
 	text-align: left;
 }
 .entry_detail th {
@@ -490,6 +503,7 @@ body {
 }
 .entry_detail td {
 	word-break: break-all;
+	overflow-wrap: anywhere;
 	padding: 0 5px;
 	border-bottom: 1px dotted rgba(99, 99, 99, 1);
 	text-align: left;
