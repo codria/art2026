@@ -87,4 +87,33 @@ window.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('[id^="detail-"]').forEach(el => {
     el.classList.add('hidden');
   });
+  updateStepStates();
 });
+
+// STEP 05, 06 の状態を現在時刻に応じて自動遷移
+// HTML 側 fallback は current (JS無効時はそのまま「現在」表示のまま)
+function updateStepStates() {
+  const steps = document.querySelectorAll('.flow-chart .step');
+  if (steps.length < 6) return;
+
+  const now = new Date();
+
+  // STEP 05: アートコンテスト当日 (8/7 00:00 〜 8/9 00:00 JST が「現在」)
+  applyStepState(steps[4],
+    new Date('2026-08-07T00:00:00+09:00'),
+    new Date('2026-08-09T00:00:00+09:00'),
+    now);
+
+  // STEP 06: 結果発表と表彰 (8/8 18:30 〜 20:30 JST が「現在」)
+  applyStepState(steps[5],
+    new Date('2026-08-08T18:30:00+09:00'),
+    new Date('2026-08-08T20:30:00+09:00'),
+    now);
+}
+
+function applyStepState(el, start, end, now) {
+  el.classList.remove('scheduled', 'current', 'completed');
+  if (now < start) el.classList.add('scheduled');
+  else if (now < end) el.classList.add('current');
+  else el.classList.add('completed');
+}
