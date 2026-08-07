@@ -26,7 +26,7 @@ function openDetail(el) {
   const detailId = el.getAttribute('href').substring(1);  // "detail-2026-01" 等
   if (el.classList.contains('top6')) {
     currentGroup = 'top6';
-  } else if (el.classList.contains('taisho') || el.classList.contains('kinsho') || el.classList.contains('ginsho') || el.classList.contains('nyuusho')) {
+  } else if (isAwardEntry(el)) {
     currentGroup = 'award';
   } else if (el.getAttribute('data-year') === '2025') {
     currentGroup = 'all_2025';
@@ -46,11 +46,18 @@ function closeDetail() {
   document.getElementById('overlay-content').innerHTML = '';
   currentGroup = null;
   currentEntryIndex = null;
+  clearHash();
 }
 
 function showDetailById(detailId) {
   const detailHtml = document.getElementById(detailId).innerHTML;
   document.getElementById('overlay-content').innerHTML = detailHtml;
+  syncHash(detailId);  // 表示中の作品をURLに反映し、そのままリンクを共有できるようにする
+}
+
+function isAwardEntry(el) {
+  return el.classList.contains('taisho') || el.classList.contains('kinsho')
+      || el.classList.contains('ginsho') || el.classList.contains('nyuusho');
 }
 
 function prevDetail(event) {
@@ -142,6 +149,45 @@ function updateAutoplayButton() {
 }
 
 
+// 作品への直リンク (例: index.html#detail-2026-05)
+// location.hash は利用者が自由に書き換えられるので、作品IDの形式を検査してから使う
+const DETAIL_ID_PATTERN = /^detail-\d{4}-\d{2}$/;
+
+function syncHash(detailId) {
+  if (!history.replaceState) return;  // 履歴を汚さずにURLだけ差し替える
+  history.replaceState(null, '', '#' + detailId);
+}
+
+function clearHash() {
+  if (!history.replaceState) return;
+  history.replaceState(null, '', location.pathname + location.search);
+}
+
+// 同じ作品がTOP6と一覧の両方に並ぶことがあるので、巡回範囲の広い一覧側を優先する
+function findEntryLink(detailId) {
+  const links = document.querySelectorAll('.entry[href="#' + detailId + '"]');
+  for (const link of links) {
+    if (!link.classList.contains('top6') && !isAwardEntry(link)) return link;
+  }
+  return links[0] || null;
+}
+
+// ハッシュ付きURLで開かれたときは、その作品を表示した状態で始める
+function openDetailFromHash() {
+  const detailId = location.hash.substring(1);
+  if (!DETAIL_ID_PATTERN.test(detailId)) return;
+  if (!document.getElementById(detailId)) return;
+
+  const link = findEntryLink(detailId);
+  if (!link) return;
+
+  // 昨年度作品は折り畳みの中にあるため、閉じたあとに元の場所が分かるよう開いておく
+  const archive = link.closest('details');
+  if (archive) archive.open = true;
+
+  openDetail(link);
+}
+
 
 // クリックされた場所が overlay-content じゃなければ閉じる
 function overlayClick(event) {
@@ -157,6 +203,7 @@ window.addEventListener('DOMContentLoaded', function() {
     el.classList.add('hidden');
   });
   updateStepStates();
+  openDetailFromHash();
 });
 
 // STEP 05, 06 の状態を現在時刻に応じて自動遷移
