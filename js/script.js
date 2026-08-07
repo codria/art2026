@@ -41,6 +41,7 @@ function openDetail(el) {
 }
 
 function closeDetail() {
+  stopAutoplay();
   document.getElementById('overlay').classList.add('hidden');
   document.getElementById('overlay-content').innerHTML = '';
   currentGroup = null;
@@ -59,6 +60,7 @@ function prevDetail(event) {
   if (currentEntryIndex > 0) {
     currentEntryIndex--;
     showDetailById(entryOrders[currentGroup][currentEntryIndex]);
+    restartAutoplayTimer();
   }
 }
 
@@ -69,7 +71,74 @@ function nextDetail(event) {
   if (currentEntryIndex < entryOrders[currentGroup].length - 1) {
     currentEntryIndex++;
     showDetailById(entryOrders[currentGroup][currentEntryIndex]);
+    restartAutoplayTimer();
   }
+}
+
+
+// 自動送り (一定時間ごとに次の作品へ、末尾まで行ったら先頭に戻る)
+const AUTOPLAY_INTERVAL_MS = 5000;
+let autoplayTimer = null;
+
+function isAutoplayOn() {
+  return autoplayTimer !== null;
+}
+
+function toggleAutoplay(event) {
+  if (event) event.stopPropagation();
+
+  if (isAutoplayOn()) {
+    stopAutoplay();
+  } else {
+    startAutoplay();
+  }
+}
+
+function startAutoplay() {
+  if (currentGroup === null || currentEntryIndex === null) return;
+
+  stopAutoplay();
+  autoplayTimer = setInterval(advanceAutoplay, AUTOPLAY_INTERVAL_MS);
+  updateAutoplayButton();
+}
+
+function stopAutoplay() {
+  if (autoplayTimer !== null) {
+    clearInterval(autoplayTimer);
+    autoplayTimer = null;
+  }
+  updateAutoplayButton();
+}
+
+// 手動で ＜ ＞ を押した直後は、待ち時間を最初から数え直す
+function restartAutoplayTimer() {
+  if (isAutoplayOn()) startAutoplay();
+}
+
+function advanceAutoplay() {
+  if (currentGroup === null || currentEntryIndex === null) {
+    stopAutoplay();
+    return;
+  }
+
+  const order = entryOrders[currentGroup];
+  if (order.length === 0) {
+    stopAutoplay();
+    return;
+  }
+
+  currentEntryIndex = (currentEntryIndex + 1) % order.length;  // 末尾の次は先頭へ
+  showDetailById(order[currentEntryIndex]);
+}
+
+function updateAutoplayButton() {
+  const btn = document.getElementById('autoplay-btn');
+  if (!btn) return;
+
+  const on = isAutoplayOn();
+  btn.classList.toggle('active', on);
+  btn.setAttribute('aria-pressed', String(on));
+  btn.textContent = on ? '❚❚ 自動送り' : '▶ 自動送り';
 }
 
 

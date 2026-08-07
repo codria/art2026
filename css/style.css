@@ -686,23 +686,37 @@ body {
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-/* 閉じるボタン */
-#close-btn {
+/* 閉じるボタン / 自動送りトグル */
+#close-btn,
+#autoplay-btn {
   position: absolute;
   top: 10px;
-  right: -10px;
   background: #999;
   color: #000;
-  padding: 6px 20px 6px 12px;
+  padding: 6px 12px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+#close-btn { right: 10px; }
+#autoplay-btn { left: 10px; }
+
+/* 自動送り ON の状態 */
+#autoplay-btn.active {
+  background: #cfa77a;
+  color: #482813;
+  font-weight: 700;
 }
 
 #close-btn:hover,
 #prev-btn:hover,
 #next-btn:hover {
   background: #fff;
+}
+
+#autoplay-btn:hover {
+  background: #fff;
+  color: #000;
 }
 
 #prev-btn, #next-btn {
