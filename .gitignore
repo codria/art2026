@@ -6,3 +6,6 @@
 # OS
 Thumbs.db
 .DS_Store
+
+# 表彰・掲示物（会場での投票結果発表など、リポジトリには載せない）
+/ceremony/
