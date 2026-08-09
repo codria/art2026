@@ -144,12 +144,17 @@ body {
 }
 
 /* アワード関連 */
-.entry.taisho .entry_thumbnail,
-.entry.kinsho .entry_thumbnail {
+/* 1行あたりの並び数: 大賞1 / 金賞・銀賞2 / 銅賞3 (引く値は .flex_wrapper の gap: 15px 分) */
+/* min-width は通常エントリーと同じ 270px。狭い画面ではそれ以上縮まずに折り返す */
+.entry.taisho .entry_thumbnail {
+	height: 400px;
+}
+.entry.kinsho .entry_thumbnail,
+.entry.ginsho .entry_thumbnail {
 	height: 250px;
 }
 .entry.taisho {
-	width: 718px;
+	width: 100%;
 	background: linear-gradient(to right, #4b0082 20%, #9932cc 70%, #4b0082 100%);
 	color: #f6e4ff;
 	border: 2px solid #5e2d79;
@@ -161,7 +166,8 @@ body {
 	color: #4b0082;
 }
 .entry.kinsho {
-	width: 718px;
+	width: calc((100% - 15px) / 2);
+	min-width: 270px;
 	background: linear-gradient(to right, #a67c00 20%, #ffd700 70%, #a67c00 100%);
 	color: #411e00;
 	border: 1px solid #503a03;
@@ -173,7 +179,8 @@ body {
 	color: #fff3ac;
 }
 .entry.ginsho {
-	width: 352px;
+	width: calc((100% - 15px) / 2);
+	min-width: 270px;
 	background: linear-gradient(to right, #a9a9a9 20%, #eeeeee 70%, #a9a9a9 100%);
 	color: #333333;
 	border: 1px solid #888888;
@@ -195,6 +202,19 @@ body {
   	content: "入賞";
 	background: #482813;
 }
+.entry.dousho {
+	width: calc((100% - 30px) / 3);
+	min-width: 270px;
+	background: linear-gradient(to right, #a4622f 20%, #d9945c 70%, #a4622f 100%);
+	color: #3a1c08;
+	border: 1px solid #854d22;
+	box-shadow: 0 0 12px rgba(164, 98, 47, 0.5);
+}
+.entry.dousho::before {
+  	content: "銅賞";
+	background: rgba(58, 28, 8, 0.85);
+	color: #ffe0c4;
+}
 .top6 {
 	background: linear-gradient(to right, #cfa77a 20%, #f2d1a9 70%, #cfa77a 100%);
 	color: #482813;
@@ -207,7 +227,8 @@ body {
 .entry.taisho .entry_title,
 .entry.kinsho .entry_title,
 .entry.ginsho .entry_title,
-.entry.nyuusho .entry_title {
+.entry.nyuusho .entry_title,
+.entry.dousho .entry_title {
 	padding: 7px 0px 7px 50px;
 }
 .entry_award_progressing {
@@ -219,92 +240,60 @@ body {
 }
 .detail {
 	position: relative;
+	z-index: 0;  /* 賞シールのリボン (z-index: -1) を背景より前に出すため */
 }
+/* 賞シール (受賞作品の詳細で ENTRY 見出しの左に表示) */
+/* 賞ごとの違いは --lit / --mid / --dark の3色だけ。形と質感は .sticker 側で共通 */
 .sticker {
 	position: absolute;
-	top: 13px;
-	right: 197px;
-	padding: 20px 20px;
-	font-size: 20px;
-	font-weight: 700;
-	width: 36px;
-	height: 36px;
-	transform: rotate(18deg);
-	white-space: nowrap;
-	color: #fff;
-	clip-path: polygon(
-		50% 0%, 60% 10%, 85% 15%, 90% 35%, 100% 50%, 90% 65%,
-		85% 85%, 65% 90%, 50% 100%, 35% 90%, 15% 85%, 10% 65%,
-		0% 50%, 10% 35%, 15% 15%, 35% 10%
-	);
+	top: 21px;  /* 円の中心を ENTRY NN の行の中心に合わせる (見出しの padding-top: 40px が起点) */
+	left: 50%;
+	margin-left: -158px;  /* ENTRY NN の左隣に置く */
+	box-sizing: border-box;
+	width: 74px;
+	height: 74px;
+	border-radius: 50%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	/* filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5)); */
-}
-.sticker.top6 {
-	background: radial-gradient(circle at center, #f3c96b 0%, #d9913f 60%, #b8770a 100%);
-	text-shadow:
-		-1px -1px 0 #a67c00,
-		 1px -1px 0 #a67c00,
-		-1px  1px 0 #a67c00,
-		 1px  1px 0 #a67c00;
-}
-.sticker.taisho {
+	font-size: 18px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	white-space: nowrap;
 	color: #fff;
-	background: radial-gradient(circle at center,
-		#d8b0ff 5%,
-		#b77ed3 20%,
-		#8e44ad 45%,
-		#6a0dad 65%
-	);
-	text-shadow:
-		-1px -1px 0 #4b0082,
-		 1px -1px 0 #4b0082,
-		-1px  1px 0 #4b0082,
-		 1px  1px 0 #4b0082;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+	background: linear-gradient(145deg, var(--lit) 0%, var(--mid) 38%, var(--dark) 72%, var(--mid) 100%);
+	box-shadow:
+		0 2px 6px rgba(0, 0, 0, 0.28),
+		inset 0 1px 1px rgba(255, 255, 255, 0.5),
+		inset 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
-.sticker.kinsho {
-	color: #fff;
-	background: radial-gradient(circle at center,
-		#ffe680 5%,
-		#ffd700 20%,
-		#e6ac00 45%,
-		#a67c00 65%
-	);
-	text-shadow:
-		-1px -1px 0 #4b2e00,
-		 1px -1px 0 #4b2e00,
-		-1px  1px 0 #4b2e00,
-		 1px  1px 0 #4b2e00;
+/* リボン2本。z-index: -1 で円の裏に回すので、親側 (.detail / #overlay-content) に z-index: 0 が要る */
+.sticker::before,
+.sticker::after {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 52px;
+	width: 22px;
+	height: 34px;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 78%, 0 100%);
 }
-.sticker.ginsho {
-	color: #fff;
-	background: radial-gradient(circle at center,
-		#f0f0f0 5%,
-		#cccccc 20%,
-		#b0b0b0 45%,
-		#999999 65%
-	);
-	text-shadow:
-		-1px -1px 0 #333333,
-		 1px -1px 0 #333333,
-		-1px  1px 0 #333333,
-		 1px  1px 0 #333333;
+.sticker::before { left: 11px;  background: var(--dark); transform: rotate(-8deg); }
+.sticker::after  { right: 11px; background: var(--mid);  transform: rotate(8deg); }
+
+/* シールを置くぶん、受賞作品だけ ENTRY 見出しを右へずらす (ずれ量は padding の半分) */
+.sticker + .section_title {
+	padding-left: 88px;
 }
-.sticker.nyuusho {
-	color: #fff;
-	background: radial-gradient(circle at center,
-		#e0a060 5%,
-		#cd7f32 20%,
-		#b87333 45%,
-		#8b4513 65%);
-	text-shadow:
-		-1px -1px 0 #7f462c,
-		 1px -1px 0 #7f462c,
-		-1px  1px 0 #7f462c,
-		 1px  1px 0 #7f462c;
-}
+
+.sticker.taisho  { --lit: #e2c2ff; --mid: #9a4fc4; --dark: #4b0082; }
+.sticker.kinsho  { --lit: #fff4bd; --mid: #e3b100; --dark: #8f6a00; }
+.sticker.ginsho  { --lit: #eaeaea; --mid: #949494; --dark: #5c5c5c; }
+.sticker.dousho,
+.sticker.nyuusho { --lit: #f4cba2; --mid: #c07a3a; --dark: #8b4513; }
+.sticker.nyuusen { --lit: #ffe6b0; --mid: #d9913f; --dark: #a2650f; }
+
 /* 折り畳みセクション (昨年度等) */
 .archive-section {
 	margin-top: 0;
@@ -401,13 +390,27 @@ body {
   color: #555;
 }
 
-.organizer-card.applicants {
-	width: 450px;
-	padding-top: 17px;
+/* 本文付きの幅広カード (ご投票／ご応募くださった皆様)。2枚で1行に並ぶ幅 */
+.organizer-card.wide {
+	box-sizing: border-box;
+	width: 465px;  /* 2枚 + gap で、上の段のカード4枚分 (225px x 4 + gap) と同じ幅になる */
+	padding: 17px 14px 10px;
 }
-.organizer-card.applicants p {
+.organizer-card.wide p {
 	padding: 0px;
 	margin: 7px;
+}
+/* スペシャルサンクスの前後に添える一文 */
+.thanks_note {
+	text-align: center;
+	font-size: 0.95em;
+	color: #555;
+	line-height: 1.9;
+	margin: 0 20px 20px;
+}
+/* カードの下に置く場合、.flex_wrapper の padding + margin (計80px) を打ち消して詰める */
+.flex_wrapper + .thanks_note {
+	margin-top: -55px;
 }
 
 .footer {
@@ -677,6 +680,7 @@ body {
 }
 #overlay-content {
 	position: relative;
+	z-index: 0;  /* 賞シールのリボン (z-index: -1) を背景より前に出すため */
   background: #fff;
   max-width: 90%;
   max-height: 98%;
